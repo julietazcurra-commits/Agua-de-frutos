@@ -3,538 +3,866 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agua de Frutos — Exportación de fruta fresca y deshidratada desde Chile</title>
-<meta name="description" content="Comercializadora Agua de Frutos: exportación y comercialización de fruta fresca y deshidratada desde Chile. Ciruela seca, pasas de uva, nueces, kiwi, palta y cereza.">
+<title id="pageTitle">Agua de Frutos — Origen chileno de excelencia</title>
+<meta id="pageDesc" name="description" content="Agua de Frutos. Selección de origen, calidad y productores. Exportación de fruta fresca y deshidratada desde Chile hacia los mercados más exigentes del mundo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --brown-950:#241611;
-    --brown-800:#4a2f22;
-    --brown-700:#79513e;
-    --brown-500:#a9724f;
-    --brown-300:#c9a181;
-    --cream-100:#f6efe2;
-    --cream-50:#fbf7ef;
-    --gold-500:#c68a3e;
-    --gold-600:#a86f2c;
-    --ink:#2a1d14;
-    --ink-soft:#5c4a3c;
-    --max:1180px;
-    --radius:18px;
+    --negro:#4a342a;
+    --chocolate:#7d5a44;
+    --nogal:#7d5a44;
+    --madera:#b2967d;
+    --arena:#d7c9b8;
+    --marfil:#f5f1ea;
+    --acento:#b2967d;
+    --acento-oscuro:#7d5a44;
+    --linen:#f5f1ea;
+    --khaki:#d7c9b8;
+    --camel:#b2967d;
+    --cocoa:#7d5a44;
+    --espresso:#4a342a;
+    --max:1240px;
+    --nav-h:96px;
+    --nav-h-scrolled:76px;
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
-  }
-  body{
-    margin:0;
-    font-family:'Inter', sans-serif;
-    color:var(--ink);
-    background:var(--cream-100);
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,.display{
-    font-family:'Fraunces', serif;
-    font-weight:500;
-    letter-spacing:-0.01em;
-    margin:0;
-  }
-  a{color:inherit;}
-  img{max-width:100%; display:block;}
-  .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
-  @media (max-width:640px){ .wrap{padding:0 20px;} }
+  html{scroll-behavior:smooth; scroll-padding-top:calc(var(--nav-h) + 24px);}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation:none !important; transition:none !important;} }
+  body{ margin:0; font-family:'Inter', sans-serif; font-weight:300; color:var(--negro); background:var(--marfil); -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,.serif{ font-family:'Cormorant Garamond', serif; font-weight:500; letter-spacing:0.015em; margin:0; }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 56px; }
+  @media (max-width:900px){ .wrap{ padding:0 40px; } }
+  @media (max-width:640px){ .wrap{ padding:0 26px; } }
+  p{ line-height:1.95; }
 
-  /* focus visibility */
   a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
-    outline:2px solid var(--gold-500);
-    outline-offset:3px;
+    outline:1px solid var(--madera); outline-offset:4px;
   }
+
+  [data-reveal]{ opacity:0; transform:translateY(28px); transition:opacity 1s ease, transform 1s ease; }
+  [data-reveal].in-view{ opacity:1; transform:translateY(0); }
+
+  /* anchor targets: keep content clear of the fixed header */
+  section[id]{ scroll-margin-top:var(--nav-h); }
+
+  /* textures (stand-in surfaces for editorial photography) — palette-only gradients */
+  .tex{ position:relative; background-size:cover; background-position:center; }
+  .tex-gold{ background:
+      radial-gradient(ellipse at 28% 22%, rgba(178,150,125,0.30), transparent 55%),
+      linear-gradient(140deg, var(--camel) 0%, var(--cocoa) 52%, var(--espresso) 100%); }
+  .tex-arena{ background: linear-gradient(155deg, var(--khaki), var(--camel) 60%, var(--cocoa)); }
+  .tex-nogal{ background: linear-gradient(160deg, var(--cocoa), var(--espresso)); }
+  .tex-fresca{ background: linear-gradient(150deg, var(--khaki) 0%, var(--camel) 60%, var(--cocoa) 100%); }
+  .tex-deshidratada{ background: linear-gradient(150deg, var(--camel) 0%, var(--cocoa) 55%, var(--espresso) 100%); }
+  .tex-terracota{ background: linear-gradient(150deg, var(--cocoa) 0%, var(--espresso) 100%); }
+  .tex::after{
+    content:''; position:absolute; inset:0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(245,241,234,0.05) 1px, transparent 0);
+    background-size:4px 4px; mix-blend-mode:overlay; pointer-events:none;
+  }
+  .tex.has-photo::after{ display:none; }
+  .photo-note{ position:absolute; bottom:14px; right:16px; font-size:0.62rem; letter-spacing:0.08em; text-transform:uppercase; color:rgba(245,241,234,0.55); z-index:2; }
 
   /* ---------- NAV ---------- */
   header.nav{
-    position:sticky; top:0; z-index:50;
-    background:rgba(36,22,17,0.92);
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    padding:32px 0; background:transparent;
+    transition:background .6s ease, padding .5s ease, box-shadow .5s ease;
+  }
+  header.nav.scrolled{
+    background:rgba(74,52,42,0.94); padding:20px 0; box-shadow:0 1px 0 rgba(245,241,234,0.08);
     backdrop-filter:blur(6px);
-    border-bottom:1px solid rgba(255,255,255,0.08);
   }
-  .nav-inner{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:14px 0;
-  }
-  .brand{
-    display:flex; align-items:center; gap:10px;
-    color:var(--cream-50); text-decoration:none;
-  }
-  .brand img{height:34px; width:auto;}
-  .brand span{font-family:'Fraunces', serif; font-size:1.05rem; letter-spacing:0.02em; color:var(--cream-50);}
-  nav.links{display:flex; gap:30px;}
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; gap:32px; }
+  .brand{ display:flex; align-items:center; line-height:0; }
+  .brand img{ height:28px; width:auto; display:block; transition:height .5s ease; }
+  header.nav.scrolled .brand img{ height:22px; }
+  @media (max-width:640px){ .brand img{ height:22px; } header.nav.scrolled .brand img{ height:19px; } }
+  nav.links{ display:flex; gap:46px; }
   nav.links a{
-    color:var(--cream-100); text-decoration:none; font-size:0.92rem; letter-spacing:0.02em;
-    opacity:0.85; transition:opacity .2s ease;
+    position:relative; color:var(--negro); font-size:0.8rem;
+    letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; padding-bottom:4px;
+    transition:color .5s ease;
   }
-  nav.links a:hover{opacity:1;}
+  nav.links a::after{
+    content:''; position:absolute; left:0; bottom:-2px; width:0; height:1px; background:var(--negro);
+    transition:width .4s ease, background .5s ease;
+  }
+  nav.links a:hover::after{ width:100%; }
+  header.nav.scrolled nav.links a{ color:var(--marfil); }
+  header.nav.scrolled nav.links a::after{ background:var(--marfil); }
+  .nav-right{ display:flex; align-items:center; gap:28px; }
+  .lang-switch{ display:flex; align-items:center; gap:8px; font-size:0.74rem; letter-spacing:0.1em; }
+  .lang-switch button{
+    background:none; border:none; color:rgba(74,52,42,0.55); cursor:pointer; padding:4px 2px;
+    font-family:'Inter'; font-size:0.74rem; letter-spacing:0.12em; text-transform:uppercase; transition:color .3s ease;
+  }
+  .lang-switch button.active{ color:var(--negro); border-bottom:1px solid var(--negro); }
+  .lang-switch span.sep{ color:rgba(74,52,42,0.3); }
+  header.nav.scrolled .lang-switch button{ color:rgba(245,241,234,0.5); }
+  header.nav.scrolled .lang-switch button.active{ color:var(--marfil); border-bottom-color:var(--marfil); }
+  header.nav.scrolled .lang-switch span.sep{ color:rgba(245,241,234,0.3); }
   .nav-cta{
-    background:var(--gold-500); color:var(--brown-950); text-decoration:none;
-    padding:9px 18px; border-radius:999px; font-size:0.88rem; font-weight:600;
-    transition:background .2s ease;
+    background:var(--negro); color:var(--marfil); border:none; border-radius:999px;
+    padding:13px 30px; font-size:0.76rem; letter-spacing:0.14em; text-transform:uppercase;
+    transition:background .35s ease; white-space:nowrap;
   }
-  .nav-cta:hover{background:var(--gold-600);}
-  .menu-toggle{display:none;}
-  @media (max-width:820px){
-    nav.links{display:none;}
-    .menu-toggle{display:block; background:none; border:1px solid rgba(255,255,255,0.3); color:var(--cream-50); padding:8px 12px; border-radius:8px;}
+  .nav-cta:hover{ background:var(--acento-oscuro); }
+  @media (max-width:900px){ nav.links{ display:none; } }
+  @media (max-width:480px){
+    .nav-inner{ gap:16px; }
+    .nav-right{ gap:14px; }
+    .nav-cta{ padding:10px 18px; font-size:0.66rem; letter-spacing:0.1em; }
+    .lang-switch{ font-size:0.66rem; }
   }
 
   /* ---------- HERO ---------- */
   .hero{
+    position:relative; min-height:92vh; display:flex; align-items:center;
+    padding:calc(var(--nav-h) + 56px) 0 80px;
     background:
-      radial-gradient(1100px 600px at 80% -10%, rgba(198,138,62,0.18), transparent 60%),
-      linear-gradient(180deg, var(--brown-950), var(--brown-800) 130%);
-    color:var(--cream-50);
-    padding:110px 0 160px;
-    position:relative;
-    overflow:hidden;
+      radial-gradient(ellipse at 78% 24%, rgba(178,150,125,0.30), transparent 55%),
+      linear-gradient(160deg, var(--marfil) 0%, var(--arena) 100%);
+    color:var(--negro); overflow:hidden;
   }
-  .hero-inner{
-    display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:center;
-  }
-  @media (max-width:900px){ .hero-inner{grid-template-columns:1fr; text-align:center;} }
-  .eyebrow{
-    text-transform:uppercase; letter-spacing:0.22em; font-size:0.72rem;
-    color:var(--gold-500); font-weight:600; margin-bottom:18px; display:inline-block;
-  }
-  .hero h1{
-    font-size:clamp(2.3rem, 4.2vw, 3.6rem);
-    line-height:1.08;
-    color:var(--cream-50);
-  }
-  .hero h1 em{font-style:italic; color:var(--gold-500); font-weight:400;}
-  .hero p.lead{
-    margin-top:22px; font-size:1.08rem; line-height:1.65; color:var(--brown-300); max-width:46ch;
-  }
-  @media (max-width:900px){ .hero p.lead{margin-left:auto; margin-right:auto;} }
-  .cta-row{display:flex; gap:16px; margin-top:38px; flex-wrap:wrap;}
-  @media (max-width:900px){ .cta-row{justify-content:center;} }
-  .btn{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:14px 26px; border-radius:999px; text-decoration:none;
-    font-size:0.95rem; font-weight:600; transition:transform .2s ease, background .2s ease;
-    border:1px solid transparent;
-  }
-  .btn-primary{background:var(--gold-500); color:var(--brown-950);}
-  .btn-primary:hover{background:var(--gold-600); transform:translateY(-1px);}
-  .btn-ghost{border-color:rgba(246,239,226,0.35); color:var(--cream-50);}
-  .btn-ghost:hover{border-color:var(--cream-50); transform:translateY(-1px);}
+  .hero-grid{ display:grid; grid-template-columns:1.15fr 0.85fr; gap:70px; align-items:center; }
+  @media (max-width:900px){ .hero-grid{ grid-template-columns:1fr; gap:56px; } }
+  .hero-eyebrow{ display:block; text-transform:uppercase; letter-spacing:0.32em; font-size:0.7rem; color:var(--nogal); margin-bottom:30px; font-weight:500; }
+  .hero h1{ font-size:clamp(2.5rem, 4.6vw, 4rem); line-height:1.2; letter-spacing:0.005em; max-width:15ch; color:var(--negro); }
+  .hero h1 em{ color:var(--acento-oscuro); font-style:italic; }
+  .hero p.lead{ margin-top:32px; font-size:1.08rem; line-height:1.9; max-width:42ch; color:var(--cocoa); font-weight:300; }
+  .hero-cta{ display:flex; gap:22px; margin-top:52px; flex-wrap:wrap; }
+  .btn{ display:inline-flex; align-items:center; padding:16px 34px; font-size:0.76rem; letter-spacing:0.14em; text-transform:uppercase; border-radius:999px; transition:background .35s ease, color .35s ease, border-color .35s ease; }
+  .btn-solid{ background:var(--negro); color:var(--marfil); border:1px solid var(--negro); }
+  .btn-solid:hover{ background:var(--acento-oscuro); border-color:var(--acento-oscuro); }
+  .btn-line{ border:1px solid rgba(74,52,42,0.4); color:var(--negro); }
+  .btn-line:hover{ border-color:var(--negro); background:rgba(74,52,42,0.06); }
 
-  .hero-mark{
-    display:flex; justify-content:center; align-items:center;
-    position:relative;
+  .hero-mark{ justify-self:center; width:min(260px, 70%); }
+  .hero-mark svg{ width:100%; height:auto; overflow:visible; }
+  .hero-mark .ring{ fill:none; transform-origin:110px 110px; }
+  .hero-mark .ring-a{ stroke:var(--acento-oscuro); stroke-width:1.1; stroke-dasharray:150 80; animation:ringSpin 26s linear infinite; }
+  .hero-mark .ring-b{ stroke:rgba(74,52,42,0.28); stroke-width:1; stroke-dasharray:40 190; animation:ringSpinRev 32s linear infinite; }
+  .hero-mark .dot{ fill:var(--negro); }
+  .hero-mark .drop{ fill:var(--acento-oscuro); transform-origin:110px 120px; animation:dropFloat 4.5s ease-in-out infinite; }
+  @keyframes ringSpin{ to{ transform:rotate(360deg); } }
+  @keyframes ringSpinRev{ to{ transform:rotate(-360deg); } }
+  @keyframes dropFloat{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-7px); } }
+  @media (prefers-reduced-motion: reduce){
+    .hero-mark .ring-a, .hero-mark .ring-b, .hero-mark .drop{ animation:none; }
   }
-  .hero-mark svg{width:min(320px, 70%); height:auto;}
-  .orbit{
-    animation:spin 26s linear infinite;
-    transform-origin:center;
+  @media (max-width:900px){ .hero-mark{ justify-self:flex-start; width:170px; } }
+  @media (max-width:640px){
+    .hero{ min-height:auto; padding:calc(var(--nav-h) + 44px) 0 64px; }
+    .hero h1{ max-width:100%; }
+    .hero p.lead{ max-width:100%; }
+    .hero-mark{ display:none; }
   }
-  @keyframes spin{ to{ transform:rotate(360deg);} }
-
-  /* organic divider (drop/crescent motif from the logo) */
-  .divider{ display:block; width:100%; line-height:0; }
-  .divider svg{ width:100%; height:auto; display:block; }
 
   /* ---------- SECTION GENERIC ---------- */
-  section{ padding:96px 0; }
-  .section-head{ max-width:640px; margin-bottom:56px; }
-  .section-head .eyebrow{color:var(--gold-600);}
-  .section-head h2{ font-size:clamp(1.8rem, 3vw, 2.5rem); color:var(--ink);}
-  .section-head p{ margin-top:16px; color:var(--ink-soft); line-height:1.65; font-size:1.02rem;}
+  section{ padding:180px 0; }
+  @media (max-width:900px){ section{ padding:130px 0; } }
+  @media (max-width:640px){ section{ padding:100px 0; } }
+  .eyebrow{ text-transform:uppercase; letter-spacing:0.3em; font-size:0.68rem; color:var(--nogal); font-weight:500; }
+  .section-head{ max-width:620px; margin-bottom:96px; }
+  @media (max-width:640px){ .section-head{ margin-bottom:64px; } }
+  .section-head h2{ font-size:clamp(2.1rem, 3.4vw, 2.9rem); line-height:1.18; margin-top:20px; }
+  .section-head p{ margin-top:24px; color:#7d5a44; font-size:1.05rem; line-height:1.85; max-width:52ch; }
 
-  /* ---------- ABOUT ---------- */
-  .about{ background:var(--cream-100); }
-  .about-grid{
-    display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:start;
-  }
-  @media (max-width:860px){ .about-grid{grid-template-columns:1fr;} }
-  .about-text p{ color:var(--ink-soft); line-height:1.75; font-size:1.02rem; margin-bottom:18px;}
-  .stat-list{
-    display:grid; gap:22px;
-  }
-  .stat{
-    background:var(--cream-50); border:1px solid var(--brown-300);
-    border-radius:var(--radius); padding:24px 26px;
-  }
-  .stat strong{
-    display:block; font-family:'Fraunces', serif; font-size:1.5rem; color:var(--brown-700);
-  }
-  .stat span{ color:var(--ink-soft); font-size:0.92rem; }
+  /* ---------- NOSOTROS (editorial) ---------- */
+  .nosotros{ background:var(--marfil); }
+  .nosotros-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:120px; align-items:center; }
+  @media (max-width:900px){ .nosotros-grid{ grid-template-columns:1fr; gap:56px; } }
+  .nosotros-media{ aspect-ratio:4/5; }
+  .nosotros-quote{ font-size:clamp(1.7rem, 2.6vw, 2.35rem); font-style:italic; line-height:1.45; color:var(--nogal); margin-bottom:44px; }
+  .nosotros-text p{ color:#7d5a44; font-size:1.04rem; line-height:1.95; margin-bottom:24px; max-width:54ch; }
 
-  /* ---------- PRODUCTS ---------- */
-  .products{ background:var(--cream-50); }
-  .grid-products{
-    display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;
+  /* ---------- SELECCION ---------- */
+  .seleccion{ padding:0; }
+  .seleccion-grid{ display:grid; grid-template-columns:repeat(2, 1fr); }
+  @media (max-width:760px){ .seleccion-grid{ grid-template-columns:1fr; } }
+  .seleccion-block{
+    position:relative; height:82vh; min-height:520px; display:flex; align-items:flex-end;
+    padding:60px; overflow:hidden; text-decoration:none;
   }
-  @media (max-width:900px){ .grid-products{grid-template-columns:repeat(2, 1fr);} }
-  @media (max-width:560px){ .grid-products{grid-template-columns:1fr;} }
-  .product-card{
-    background:var(--brown-700);
-    border-radius:var(--radius);
-    padding:30px 26px;
-    color:var(--cream-100);
-    position:relative;
-    overflow:hidden;
-    min-height:230px;
-    display:flex; flex-direction:column; justify-content:flex-end;
-    transition:transform .25s ease, background .25s ease;
-  }
-  .product-card:hover{ transform:translateY(-4px); background:var(--brown-800); }
-  .product-icon{ position:absolute; top:22px; right:22px; opacity:0.9; }
-  .product-icon svg{ width:44px; height:44px; }
-  .product-card h3{
-    font-size:1.25rem; color:var(--cream-50); margin-bottom:6px;
-  }
-  .product-card p{ color:var(--brown-300); font-size:0.92rem; line-height:1.5; margin:0;}
-  .product-tag{
-    display:inline-block; margin-top:12px; font-size:0.72rem; letter-spacing:0.08em;
-    text-transform:uppercase; color:var(--gold-500); font-weight:600;
-  }
+  .seleccion-block .inner{ position:relative; z-index:2; color:var(--marfil); text-decoration:none; }
+  .seleccion-block .inner span{ text-transform:uppercase; letter-spacing:0.24em; font-size:0.68rem; color:var(--arena); text-decoration:none; }
+  .seleccion-block .inner h3{ font-size:2.1rem; margin-top:16px; text-decoration:none !important; border-bottom:none !important; }
+  .seleccion-block .inner p{ margin-top:16px; font-size:0.94rem; line-height:1.75; max-width:32ch; color:rgba(245,241,234,0.82); }
+  .seleccion-block .tex{ position:absolute; inset:0; transition:transform .7s ease; }
+  .seleccion-block:hover .tex{ transform:scale(1.06); }
+  .seleccion-block::before{ content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(74,52,42,0.1), rgba(74,52,42,0.78)); z-index:1; }
+  .seleccion-block, .seleccion-block *{ text-decoration:none; }
 
-  /* ---------- PROCESS ---------- */
-  .process{ background:var(--brown-950); color:var(--cream-100); }
-  .process .section-head p{ color:var(--brown-300); }
-  .process .section-head h2{ color:var(--cream-50); }
-  .process-list{
-    display:grid; grid-template-columns:repeat(4, 1fr); gap:24px;
-  }
-  @media (max-width:900px){ .process-list{grid-template-columns:repeat(2, 1fr);} }
-  @media (max-width:560px){ .process-list{grid-template-columns:1fr;} }
-  .process-item{
-    border-top:1px solid rgba(246,239,226,0.18); padding-top:20px;
-  }
-  .process-num{
-    font-family:'Fraunces', serif; font-style:italic; color:var(--gold-500); font-size:1.6rem;
-  }
-  .process-item h3{ font-size:1.05rem; color:var(--cream-50); margin:10px 0 8px; font-family:'Inter'; font-weight:600;}
-  .process-item p{ color:var(--brown-300); font-size:0.92rem; line-height:1.6; margin:0; }
+  /* ---------- CATALOGO ---------- */
+  .catalogo{ background:var(--marfil); }
+  .product-row{ display:flex; gap:100px; align-items:center; margin-bottom:170px; }
+  .product-row:last-child{ margin-bottom:0; }
+  .product-row.reverse{ flex-direction:row-reverse; }
+  @media (max-width:900px){ .product-row, .product-row.reverse{ flex-direction:column; gap:44px; margin-bottom:96px; } }
+  .product-media{ flex:1 1 50%; aspect-ratio:5/6; position:relative; overflow:hidden; }
+  .product-media img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .product-info{ flex:1 1 50%; }
+  .product-info .eyebrow{ display:block; margin-bottom:18px; }
+  .product-info h3{ font-size:clamp(1.9rem, 2.6vw, 2.5rem); line-height:1.15; margin-bottom:22px; }
+  .product-info > p{ color:#7d5a44; font-size:1.02rem; line-height:1.9; max-width:50ch; margin-bottom:40px; }
+  .spec-list{ display:grid; grid-template-columns:1fr 1fr; gap:28px 44px; margin-bottom:44px; }
+  @media (max-width:520px){ .spec-list{ grid-template-columns:1fr; } }
+  .spec-list div{ border-top:1px solid rgba(74,52,42,0.15); padding-top:14px; }
+  .spec-list strong{ display:block; font-size:0.66rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--nogal); margin-bottom:8px; font-weight:600; }
+  .spec-list span{ font-size:0.92rem; line-height:1.6; color:#7d5a44; }
+  .btn-spec{ display:inline-block; border-bottom:1px solid var(--negro); padding-bottom:5px; font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--negro); transition:opacity .3s ease; }
+  .btn-spec:hover{ opacity:0.5; }
 
-  /* ---------- COMMITMENTS ---------- */
-  .commit{ background:var(--cream-100); }
-  .commit-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; }
-  @media (max-width:860px){ .commit-grid{grid-template-columns:1fr;} }
-  .commit-card{
-    background:var(--cream-50); border-radius:var(--radius); padding:28px 26px;
-    border:1px solid var(--brown-300);
-  }
-  .commit-card svg{ width:30px; height:30px; margin-bottom:14px; color:var(--brown-700); }
-  .commit-card h3{ font-size:1.05rem; font-family:'Inter'; font-weight:600; margin-bottom:8px; }
-  .commit-card p{ color:var(--ink-soft); font-size:0.92rem; line-height:1.6; margin:0;}
+  /* ---------- ORIGEN ---------- */
+  .origen{ background:var(--negro); color:var(--marfil); }
+  .origen-grid{ display:grid; grid-template-columns:0.75fr 1.25fr; gap:120px; align-items:center; }
+  @media (max-width:900px){ .origen-grid{ grid-template-columns:1fr; gap:64px; } }
+  .origen .section-head p{ color:rgba(245,241,234,0.65); }
+  .origen .eyebrow{ color:var(--arena); }
+  .origen-map{ position:relative; }
+  .origen-map svg{ width:100%; height:auto; }
+  .origen-list{ display:grid; gap:0; }
+  .origen-list div{ border-top:1px solid rgba(245,241,234,0.15); padding:28px 0; display:grid; grid-template-columns:130px 1fr; gap:24px; }
+  .origen-list div:last-child{ border-bottom:1px solid rgba(245,241,234,0.15); }
+  .origen-list strong{ font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--arena); font-weight:500; }
+  .origen-list span{ font-size:0.98rem; line-height:1.85; color:rgba(245,241,234,0.82); }
 
-  /* ---------- CONTACT ---------- */
-  .contact{ background:var(--brown-700); color:var(--cream-100); }
-  .contact-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; }
-  @media (max-width:900px){ .contact-grid{grid-template-columns:1fr;} }
-  .contact h2{ color:var(--cream-50); font-size:clamp(1.8rem, 3vw, 2.4rem); }
-  .contact p.lead{ color:var(--brown-300); margin-top:16px; line-height:1.65; max-width:42ch;}
-  .contact-info{ margin-top:32px; display:grid; gap:16px; }
-  .contact-info div{ font-size:0.95rem; }
-  .contact-info strong{ display:block; color:var(--gold-500); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:4px; }
-  form{
-    background:var(--cream-50); border-radius:var(--radius); padding:34px;
-    display:grid; gap:16px; color:var(--ink);
-  }
-  form .row2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-  @media (max-width:520px){ form .row2{grid-template-columns:1fr;} }
-  label{ font-size:0.82rem; font-weight:600; color:var(--ink-soft); display:block; margin-bottom:6px;}
+  /* ---------- MERCADOS ---------- */
+  .mercados{ background:var(--chocolate); color:var(--marfil); }
+  .mercados .eyebrow{ color:var(--arena); }
+  .mercados .section-head p{ color:rgba(245,241,234,0.65); }
+  .mercados-map{ width:100%; margin-top:20px; }
+  .mercados-map svg{ width:100%; height:auto; overflow:visible; }
+  .market-line{ transition:stroke-dashoffset 2.4s cubic-bezier(.22,.61,.36,1); fill:none; stroke-linecap:round; stroke-linejoin:round; }
+  .market-label{ font-size:13px; fill:var(--marfil); letter-spacing:0.05em; }
+  .market-label.origin{ fill:var(--arena); font-size:13px; }
+  .market-dot{ fill:var(--arena); }
+  .market-dot.origin{ fill:var(--marfil); }
+
+  /* ---------- PROCESO ---------- */
+  .proceso{ background:var(--marfil); }
+  .timeline{ display:grid; grid-template-columns:repeat(4, 1fr); gap:40px; }
+  @media (max-width:860px){ .timeline{ grid-template-columns:repeat(2, 1fr); gap:48px 32px; } }
+  @media (max-width:520px){ .timeline{ grid-template-columns:1fr; gap:48px; } }
+  .tl-step{ position:relative; }
+  .tl-media{ aspect-ratio:3/4; position:relative; margin-bottom:28px; }
+  .tl-num{ position:absolute; top:18px; left:18px; z-index:2; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.7rem; color:var(--marfil); }
+  .tl-step h3{ font-size:1.2rem; margin-bottom:10px; }
+  .tl-step p{ font-size:0.92rem; line-height:1.75; color:#7d5a44; }
+
+  /* ---------- COMPROMISO ---------- */
+  .compromiso{ background:var(--arena); color:var(--negro); }
+  .compromiso-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:120px; align-items:center; }
+  @media (max-width:900px){ .compromiso-grid{ grid-template-columns:1fr; gap:56px; } }
+  .compromiso-media{ aspect-ratio:5/4; }
+  .compromiso-cols{ display:grid; gap:44px; }
+  .compromiso-cols div{ border-top:1px solid rgba(74,52,42,0.2); padding-top:22px; }
+  .compromiso-cols h3{ font-size:1.2rem; margin-bottom:10px; }
+  .compromiso-cols p{ font-size:0.94rem; line-height:1.8; color:#7d5a44; }
+
+  /* ---------- CONTACTO ---------- */
+  .contacto{ background:var(--nogal); color:var(--marfil); }
+  .contacto-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:120px; }
+  @media (max-width:900px){ .contacto-grid{ grid-template-columns:1fr; gap:64px; } }
+  .contacto-logo{ height:46px; width:auto; margin-bottom:48px; }
+  .contacto-phrase{ font-size:1.55rem; font-style:italic; line-height:1.5; margin-bottom:48px; max-width:24ch; }
+  .contacto-info{ display:grid; gap:24px; margin-bottom:44px; }
+  .contacto-info strong{ display:block; font-size:0.68rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--arena); margin-bottom:6px; }
+  .social-row{ display:flex; gap:26px; }
+  .social-row a{ font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; border-bottom:1px solid rgba(245,241,234,0.4); padding-bottom:3px; }
+
+  form{ display:grid; gap:34px; }
+  form .row2{ display:grid; grid-template-columns:1fr 1fr; gap:34px; }
+  @media (max-width:520px){ form .row2{ grid-template-columns:1fr; } }
+  label{ font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(245,241,234,0.6); display:block; margin-bottom:10px; }
   input, textarea{
-    width:100%; border:1px solid var(--brown-300); border-radius:10px;
-    padding:12px 14px; font-family:'Inter'; font-size:0.95rem; background:#fff; color:var(--ink);
+    width:100%; border:none; border-bottom:1px solid rgba(245,241,234,0.35);
+    padding:10px 2px; font-family:'Inter'; font-size:1rem; background:transparent; color:var(--marfil);
   }
-  textarea{ min-height:110px; resize:vertical; }
+  input::placeholder, textarea::placeholder{ color:rgba(245,241,234,0.35); }
+  textarea{ min-height:90px; resize:vertical; }
   .form-submit{
-    background:var(--brown-700); color:var(--cream-50); border:none; border-radius:999px;
-    padding:14px 26px; font-weight:600; font-size:0.95rem; cursor:pointer; justify-self:start;
-    transition:background .2s ease;
+    justify-self:start; background:var(--negro); color:var(--marfil); border:none;
+    padding:16px 36px; font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer;
+    transition:background .3s ease;
   }
-  .form-submit:hover{ background:var(--brown-800); }
-  .form-note{ font-size:0.8rem; color:var(--ink-soft); }
+  .form-submit:hover{ opacity:0.85; }
+  .form-note{ font-size:0.8rem; color:rgba(245,241,234,0.55); }
 
   /* ---------- FOOTER ---------- */
-  footer{ background:var(--brown-950); color:var(--brown-300); padding:48px 0 32px; }
-  .footer-inner{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
-  .footer-brand{ display:flex; align-items:center; gap:10px; }
-  .footer-brand img{ height:26px; }
-  .footer-brand span{ font-family:'Fraunces', serif; color:var(--cream-100); font-size:0.95rem; }
-  footer nav{ display:flex; gap:24px; }
-  footer nav a{ color:var(--brown-300); text-decoration:none; font-size:0.85rem; }
-  footer nav a:hover{ color:var(--cream-100); }
-  .footer-bottom{ margin-top:28px; font-size:0.78rem; color:var(--brown-500); text-align:center; }
+  footer{ background:var(--negro); color:rgba(245,241,234,0.7); padding:110px 0 46px; }
+  .footer-top{ display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; margin-bottom:80px; }
+  @media (max-width:760px){ .footer-top{ grid-template-columns:1fr; gap:44px; } }
+  .footer-logo{ height:44px; width:auto; margin-bottom:26px; }
+  .newsletter{ display:flex; gap:0; border-bottom:1px solid rgba(245,241,234,0.3); max-width:420px; }
+  .newsletter input{ flex:1; border:none; background:transparent; color:var(--marfil); padding:12px 4px; font-family:'Inter'; }
+  .newsletter button{ background:none; border:none; color:var(--marfil); text-transform:uppercase; letter-spacing:0.1em; font-size:0.78rem; cursor:pointer; }
+  footer nav{ display:flex; gap:30px; flex-wrap:wrap; }
+  footer nav a{ color:rgba(245,241,234,0.7); text-decoration:none; font-size:0.85rem; }
+  footer nav a:hover{ color:var(--marfil); }
+  .footer-bottom{ border-top:1px solid rgba(245,241,234,0.12); padding-top:26px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:0.78rem; color:rgba(245,241,234,0.45); }
 </style>
 </head>
 <body>
 
-<header class="nav">
+<header class="nav" id="siteNav">
   <div class="wrap nav-inner">
-    <a href="#top" class="brand">
-      <img src="logo.png" alt="Agua de Frutos">
-    </a>
+    <a href="#top" class="brand"><img src="logo-wordmark-dark.png" data-logo-dark="logo-wordmark-dark.png" data-logo-light="logo-wordmark.png" alt="Agua de Frutos"></a>
     <nav class="links">
-      <a href="#nosotros">Nosotros</a>
-      <a href="#productos">Productos</a>
-      <a href="#proceso">Proceso</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#nosotros" data-i18n="nav.nosotros">Nosotros</a>
+      <a href="#productos" data-i18n="nav.coleccion">Colección</a>
+      <a href="#origen" data-i18n="nav.origen">Origen</a>
+      <a href="#proceso" data-i18n="nav.proceso">Proceso</a>
+      <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
     </nav>
-    <a href="#contacto" class="nav-cta">Contactar</a>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button type="button" data-lang="es" class="active">ES</button>
+        <span class="sep">/</span>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a href="#contacto" class="nav-cta" data-i18n="nav.cta">Contactar</a>
+    </div>
   </div>
 </header>
 
-<main id="top">
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-inner">
-      <div>
-        <span class="eyebrow">Comercializadora Agua de Frutos · Chile</span>
-        <h1>Fruta chilena, <em>seleccionada</em> para llegar lejos.</h1>
-        <p class="lead">Exportamos y comercializamos fruta fresca y fruta deshidratada de calidad, trabajando codo a codo con productores chilenos en cada etapa: selección, proceso y despacho a destino.</p>
-        <div class="cta-row">
-          <a href="#productos" class="btn btn-primary">Ver catálogo</a>
-          <a href="#contacto" class="btn btn-ghost">Hablar con nosotros</a>
-        </div>
-      </div>
-      <div class="hero-mark" aria-hidden="true">
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g class="orbit">
-            <path d="M60 65C60 40 82 22 108 25C134 28 152 50 148 76C144 102 120 118 96 116" stroke="#c68a3e" stroke-width="3" stroke-linecap="round"/>
-            <path d="M60 65C56 90 74 112 100 114C112 115 122 111 130 104" stroke="#f6efe2" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
-          </g>
-          <circle cx="100" cy="46" r="4" fill="#f6efe2"/>
-          <path d="M100 58C108 70 112 78 112 86C112 93.7 106.6 100 100 100C93.4 100 88 93.7 88 86C88 78 92 70 100 58Z" fill="#c68a3e"/>
-        </svg>
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="hero-eyebrow" data-i18n="hero.eyebrow">Comercializadora Agua de Frutos · Chile</span>
+      <h1 data-i18n="hero.title">Fruta <em>seleccionada</em> para llegar lejos.</h1>
+      <p class="lead" data-i18n="hero.lead">Exportamos y comercializamos fruta fresca y fruta deshidratada de calidad, trabajando con productores chilenos en cada etapa: selección, proceso y despacho a destino.</p>
+      <div class="hero-cta">
+        <a href="#productos" class="btn btn-solid" data-i18n="hero.cta1">Ver catálogo</a>
+        <a href="#contacto" class="btn btn-line" data-i18n="hero.cta2">Hablar con nosotros</a>
       </div>
     </div>
-  </section>
-
-  <div class="divider" aria-hidden="true">
-    <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
-      <path d="M0,0 L1440,0 L1440,40 C1200,80 900,20 720,45 C540,70 240,10 0,50 Z" fill="#f6efe2"/>
-    </svg>
+    <div class="hero-mark" aria-hidden="true">
+      <svg viewBox="0 0 220 220">
+        <circle class="ring ring-a" cx="110" cy="110" r="94"/>
+        <circle class="ring ring-b" cx="110" cy="110" r="94"/>
+        <circle class="dot" cx="110" cy="28" r="4"/>
+        <path class="drop" d="M110 66C130 94 141 112 141 130C141 153 128 168 110 168C92 168 79 153 79 130C79 112 90 94 110 66Z"/>
+      </svg>
+    </div>
   </div>
+</section>
 
-  <!-- ABOUT -->
-  <section class="about" id="nosotros">
-    <div class="wrap about-grid">
-      <div class="about-text">
-        <span class="eyebrow">Quiénes somos</span>
-        <h2 style="margin-top:14px; margin-bottom:22px;">Del campo a la exportación, sin perder el detalle.</h2>
-        <p>Agua de Frutos es una comercializadora chilena dedicada a la exportación de fruta fresca y fruta deshidratada. Trabajamos directamente con productores locales, seleccionando fruta de calidad de exportación y acompañando cada envío hasta que llega a destino.</p>
-        <p>Nuestro trabajo se apoya en la experiencia previa desarrollada en Argentina junto a Fruit Cascade Exports, aplicando ese mismo criterio de selección y trazabilidad a la fruta chilena.</p>
-        <p>Hoy comercializamos ciruela seca, pasas de uva, nueces, kiwi, palta y cereza, y sumamos nuevas líneas según la temporada y los mercados de destino.</p>
-      </div>
-      <div class="stat-list">
-        <div class="stat">
-          <strong>6 líneas de producto</strong>
-          <span>Fruta fresca y deshidratada, según temporada</span>
-        </div>
-        <div class="stat">
-          <strong>Origen Chile</strong>
-          <span>Selección directa con productores locales</span>
-        </div>
-        <div class="stat">
-          <strong>Acompañamiento integral</strong>
-          <span>Desde la selección hasta la exportación</span>
-        </div>
+<!-- NOSOTROS -->
+<section class="nosotros" id="nosotros">
+  <div class="wrap nosotros-grid">
+    <div class="nosotros-media tex has-photo" style="background-image:url('collage-origen.jpg');" data-reveal></div>
+    <div data-reveal>
+      <p class="nosotros-quote" data-i18n="nosotros.quote">"No exportamos solamente fruta.<br>Exportamos confianza."</p>
+      <div class="nosotros-text">
+        <p data-i18n="nosotros.p1">Agua de Frutos nace en Chile para seleccionar lo que la tierra ofrece en su mejor punto: origen, calidad y el trabajo de productores que conocemos de cerca.</p>
+        <p data-i18n="nosotros.p2">Cada envío es el resultado de un criterio de selección heredado de nuestra experiencia junto a Fruit Cascade Exports en Argentina, aplicado ahora a la fruta chilena.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PRODUCTS -->
-  <section class="products" id="productos">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Catálogo</span>
-        <h2 style="margin-top:14px;">Lo que exportamos</h2>
-        <p>Cada línea se selecciona según su temporada y se adapta al formato de empaque que necesite tu mercado.</p>
+<!-- SELECCION -->
+<section class="seleccion">
+  <div class="seleccion-grid">
+    <a href="#productos" class="seleccion-block">
+      <div class="tex tex-fresca has-photo" style="background-image:url('cereza.jpg');"></div>
+      <div class="inner">
+        <span data-i18n="seleccion.label">Categoría</span>
+        <h3 data-i18n="seleccion.fresca.title">Fruta fresca</h3>
+        <p data-i18n="seleccion.fresca.desc">Kiwi, palta, cereza y limón, cosechados y calibrados por temporada.</p>
       </div>
-      <div class="grid-products">
+    </a>
+    <a href="#productos" class="seleccion-block">
+      <div class="tex tex-deshidratada"></div>
+      <div class="inner">
+        <span data-i18n="seleccion.label">Categoría</span>
+        <h3 data-i18n="seleccion.deshidratada.title">Fruta deshidratada</h3>
+        <p data-i18n="seleccion.deshidratada.desc">Ciruela y pasas de uva, procesadas para conservar su calidad de exportación.</p>
+      </div>
+    </a>
+  </div>
+</section>
 
-        <div class="product-card">
-          <div class="product-icon">
-            <svg viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="26" rx="12" ry="14" stroke="#f6efe2" stroke-width="2"/><path d="M24 12C24 12 26 8 30 8" stroke="#f6efe2" stroke-width="2" stroke-linecap="round"/><path d="M17 20C19 24 19 28 16 32" stroke="#f6efe2" stroke-width="1.4" opacity="0.6"/></svg>
-          </div>
-          <h3>Ciruela seca</h3>
-          <p>Deshidratada, seleccionada por tamaño y calibre para exportación.</p>
-          <span class="product-tag">Fruta deshidratada</span>
+<!-- CATALOGO -->
+<section class="catalogo" id="productos">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow" data-i18n="catalogo.eyebrow">Colección</span>
+      <h2 data-i18n="catalogo.title">Lo que seleccionamos</h2>
+      <p data-i18n="catalogo.lead">Cada línea responde a un origen, una temporada y un estándar de calidad definidos.</p>
+    </div>
+
+    <div class="product-row" data-reveal>
+      <div class="product-media"><img src="ciruela.jpg" alt="Ciruela seca Agua de Frutos"></div>
+      <div class="product-info">
+        <span class="eyebrow" data-i18n="p.ciruela.eyebrow">Fruta deshidratada</span>
+        <h3 data-i18n="p.ciruela.title">Ciruela seca</h3>
+        <p data-i18n="p.ciruela.desc">Seleccionada por calibre y humedad, para consumo directo e industria alimentaria.</p>
+        <div class="spec-list">
+          <div><strong data-i18n="lbl.origen">Origen</strong><span data-i18n="p.ciruela.origen">Valle Central, Chile</span></div>
+          <div><strong data-i18n="lbl.temporada">Temporada</strong><span data-i18n="p.ciruela.temporada">Disponible todo el año</span></div>
+          <div><strong data-i18n="lbl.mercados">Mercados</strong><span data-i18n="p.ciruela.mercados">Asia, Europa</span></div>
+          <div><strong data-i18n="lbl.presentaciones">Presentaciones</strong><span data-i18n="p.ciruela.presentaciones">Granel 12,5 kg · retail 250 g / 500 g</span></div>
         </div>
-
-        <div class="product-card">
-          <div class="product-icon">
-            <svg viewBox="0 0 48 48" fill="none"><ellipse cx="18" cy="18" rx="6" ry="5" stroke="#f6efe2" stroke-width="2"/><ellipse cx="28" cy="16" rx="5.5" ry="4.5" stroke="#f6efe2" stroke-width="2"/><ellipse cx="22" cy="26" rx="6" ry="5" stroke="#f6efe2" stroke-width="2"/><ellipse cx="32" cy="27" rx="5" ry="4.2" stroke="#f6efe2" stroke-width="2"/><ellipse cx="24" cy="36" rx="6" ry="5" stroke="#f6efe2" stroke-width="2"/><path d="M24 6V10" stroke="#f6efe2" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Pasas de uva</h3>
-          <p>Pasas rubias y morenas, clasificadas para consumo directo e industria.</p>
-          <span class="product-tag">Fruta deshidratada</span>
-        </div>
-
-        <div class="product-card">
-          <div class="product-icon">
-            <svg viewBox="0 0 48 48" fill="none"><path d="M24 10C15 10 10 17 10 24C10 32 16 38 24 38C32 38 38 32 38 24C38 17 33 10 24 10Z" stroke="#f6efe2" stroke-width="2"/><path d="M24 10V38M14 18C19 22 29 22 34 18M14 30C19 26 29 26 34 30" stroke="#f6efe2" stroke-width="1.3" opacity="0.6"/></svg>
-          </div>
-          <h3>Nueces</h3>
-          <p>Con y sin cáscara, según especificación del comprador.</p>
-          <span class="product-tag">Fruto seco</span>
-        </div>
-
-        <div class="product-card">
-          <div class="product-icon">
-            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="14" stroke="#f6efe2" stroke-width="2"/><path d="M17 24L21 28L31 18" stroke="#f6efe2" stroke-width="1.3" opacity="0" /><g stroke="#f6efe2" stroke-width="1" opacity="0.7"><line x1="24" y1="14" x2="24" y2="34"/><line x1="14" y1="24" x2="34" y2="24"/><line x1="17.3" y1="17.3" x2="30.7" y2="30.7"/><line x1="30.7" y1="17.3" x2="17.3" y2="30.7"/></g></svg>
-          </div>
-          <h3>Kiwi</h3>
-          <p>Fruta fresca de exportación, cosechada y calibrada por temporada.</p>
-          <span class="product-tag">Fruta fresca</span>
-        </div>
-
-        <div class="product-card">
-          <div class="product-icon">
-            <svg viewBox="0 0 48 48" fill="none"><path d="M18 8C14 14 12 20 12 26C12 33 17 39 24 39C31 39 36 33 36 26C36 19 32 12 28 8" stroke="#f6efe2" stroke-width="2"/><circle cx="24" cy="27" r="4.5" stroke="#f6efe2" stroke-width="1.6"/></svg>
-          </div>
-          <h3>Palta</h3>
-          <p>Fruta fresca, seleccionada por calibre y punto de madurez.</p>
-          <span class="product-tag">Fruta fresca</span>
-        </div>
-
-        <div class="product-card">
-          <div class="product-icon">
-            <svg viewBox="0 0 48 48" fill="none"><circle cx="18" cy="28" r="7" stroke="#f6efe2" stroke-width="2"/><circle cx="31" cy="30" r="6" stroke="#f6efe2" stroke-width="2"/><path d="M20 22C22 14 26 10 30 8M28 24C29 18 29 14 30 8" stroke="#f6efe2" stroke-width="1.4" opacity="0.6"/></svg>
-          </div>
-          <h3>Cereza</h3>
-          <p>Fruta fresca de temporada, con logística preparada para envíos aéreos y marítimos.</p>
-          <span class="product-tag">Fruta fresca</span>
-        </div>
-
+        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Solicitar especificaciones</a>
       </div>
     </div>
-  </section>
 
-  <!-- PROCESS -->
-  <section class="process" id="proceso">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Cómo trabajamos</span>
-        <h2 style="margin-top:14px;">De la selección al puerto de destino</h2>
-        <p>Un proceso ordenado, pensado para que cada envío llegue en las condiciones que tu mercado exige.</p>
-      </div>
-      <div class="process-list">
-        <div class="process-item">
-          <span class="process-num">01</span>
-          <h3>Selección en origen</h3>
-          <p>Trabajo directo con productores chilenos para elegir fruta según calibre, calidad y temporada.</p>
+    <div class="product-row reverse" data-reveal>
+      <div class="product-media"><img src="pasas.jpg" alt="Pasas de uva jumbo Agua de Frutos"></div>
+      <div class="product-info">
+        <span class="eyebrow" data-i18n="p.pasas.eyebrow">Fruta deshidratada</span>
+        <h3 data-i18n="p.pasas.title">Pasas de uva</h3>
+        <p data-i18n="p.pasas.desc">Rubias y morenas, clasificadas por tamaño para consumo directo e industria.</p>
+        <div class="spec-list">
+          <div><strong data-i18n="lbl.origen">Origen</strong><span data-i18n="p.pasas.origen">Valle de Copiapó y Elqui</span></div>
+          <div><strong data-i18n="lbl.temporada">Temporada</strong><span data-i18n="p.pasas.temporada">Disponible todo el año</span></div>
+          <div><strong data-i18n="lbl.mercados">Mercados</strong><span data-i18n="p.pasas.mercados">Asia, Medio Oriente</span></div>
+          <div><strong data-i18n="lbl.presentaciones">Presentaciones</strong><span data-i18n="p.pasas.presentaciones">Granel 10 kg · retail 200 g / 400 g</span></div>
         </div>
-        <div class="process-item">
-          <span class="process-num">02</span>
-          <h3>Proceso y clasificación</h3>
-          <p>Deshidratado, clasificación y empaque adaptados al producto y al mercado de destino.</p>
-        </div>
-        <div class="process-item">
-          <span class="process-num">03</span>
-          <h3>Control de calidad</h3>
-          <p>Revisión antes del despacho para asegurar que cada lote cumpla lo acordado.</p>
-        </div>
-        <div class="process-item">
-          <span class="process-num">04</span>
-          <h3>Exportación</h3>
-          <p>Coordinación de despacho FOB o CIF según las necesidades logísticas del comprador.</p>
-        </div>
+        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Solicitar especificaciones</a>
       </div>
     </div>
-  </section>
 
-  <!-- COMMITMENTS -->
-  <section class="commit">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Nuestro compromiso</span>
-        <h2 style="margin-top:14px;">Trabajamos para que confíes en cada envío</h2>
-      </div>
-      <div class="commit-grid">
-        <div class="commit-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2L4 6V12C4 17 7.5 20.7 12 22C16.5 20.7 20 17 20 12V6L12 2Z"/></svg>
-          <h3>Trazabilidad de origen</h3>
-          <p>Sabemos de qué productor y qué campo viene cada lote que comercializamos.</p>
+    <div class="product-row" data-reveal>
+      <div class="product-media"><img src="kiwi.jpg" alt="Kiwi Agua de Frutos"></div>
+      <div class="product-info">
+        <span class="eyebrow" data-i18n="p.kiwi.eyebrow">Fruta fresca</span>
+        <h3 data-i18n="p.kiwi.title">Kiwi</h3>
+        <p data-i18n="p.kiwi.desc">Cosechado y calibrado por temporada, con manejo poscosecha cuidado.</p>
+        <div class="spec-list">
+          <div><strong data-i18n="lbl.origen">Origen</strong><span data-i18n="p.kiwi.origen">Maule y Biobío</span></div>
+          <div><strong data-i18n="lbl.temporada">Temporada</strong><span data-i18n="p.kiwi.temporada">Mayo – octubre</span></div>
+          <div><strong data-i18n="lbl.mercados">Mercados</strong><span data-i18n="p.kiwi.mercados">Asia, Europa</span></div>
+          <div><strong data-i18n="lbl.presentaciones">Presentaciones</strong><span data-i18n="p.kiwi.presentaciones">Cajas 3,5 kg / 10 kg</span></div>
         </div>
-        <div class="commit-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
-          <h3>Empaque a medida</h3>
-          <p>Adaptamos formato y presentación según el destino y el comprador.</p>
-        </div>
-        <div class="commit-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
-          <h3>Acompañamiento cercano</h3>
-          <p>Coordinamos contigo cada etapa, desde la cotización hasta la llegada del pedido.</p>
-        </div>
+        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Solicitar especificaciones</a>
       </div>
     </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section class="contact" id="contacto">
-    <div class="wrap contact-grid">
+    <div class="product-row reverse" data-reveal>
+      <div class="product-media"><img src="palta.jpg" alt="Palta Hass Agua de Frutos"></div>
+      <div class="product-info">
+        <span class="eyebrow" data-i18n="p.palta.eyebrow">Fruta fresca</span>
+        <h3 data-i18n="p.palta.title">Palta</h3>
+        <p data-i18n="p.palta.desc">Variedad Hass, seleccionada por calibre y punto óptimo de madurez.</p>
+        <div class="spec-list">
+          <div><strong data-i18n="lbl.origen">Origen</strong><span data-i18n="p.palta.origen">Valparaíso y Petorca</span></div>
+          <div><strong data-i18n="lbl.temporada">Temporada</strong><span data-i18n="p.palta.temporada">Septiembre – marzo</span></div>
+          <div><strong data-i18n="lbl.mercados">Mercados</strong><span data-i18n="p.palta.mercados">Europa, Asia, Latinoamérica</span></div>
+          <div><strong data-i18n="lbl.presentaciones">Presentaciones</strong><span data-i18n="p.palta.presentaciones">Cajas 4 kg / 10 kg</span></div>
+        </div>
+        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Solicitar especificaciones</a>
+      </div>
+    </div>
+
+    <div class="product-row" data-reveal>
+      <div class="product-media"><img src="cereza.jpg" alt="Cereza Agua de Frutos"></div>
+      <div class="product-info">
+        <span class="eyebrow" data-i18n="p.cereza.eyebrow">Fruta fresca</span>
+        <h3 data-i18n="p.cereza.title">Cereza</h3>
+        <p data-i18n="p.cereza.desc">Fruta de temporada corta, con logística preparada para envío aéreo y marítimo.</p>
+        <div class="spec-list">
+          <div><strong data-i18n="lbl.origen">Origen</strong><span data-i18n="p.cereza.origen">O'Higgins y Ñuble</span></div>
+          <div><strong data-i18n="lbl.temporada">Temporada</strong><span data-i18n="p.cereza.temporada">Noviembre – enero</span></div>
+          <div><strong data-i18n="lbl.mercados">Mercados</strong><span data-i18n="p.cereza.mercados">China, Hong Kong, Asia</span></div>
+          <div><strong data-i18n="lbl.presentaciones">Presentaciones</strong><span data-i18n="p.cereza.presentaciones">Cajas 5 kg · clamshell retail</span></div>
+        </div>
+        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Solicitar especificaciones</a>
+      </div>
+    </div>
+
+    <div class="product-row reverse" data-reveal>
+      <div class="product-media"><img src="limon.jpg" alt="Limón fresco Agua de Frutos"></div>
+      <div class="product-info">
+        <span class="eyebrow" data-i18n="p.limon.eyebrow">Fruta fresca</span>
+        <h3 data-i18n="p.limon.title">Limón fresco</h3>
+        <p data-i18n="p.limon.desc">Seleccionado por calibre, color y contenido de jugo para exportación.</p>
+        <div class="spec-list">
+          <div><strong data-i18n="lbl.origen">Origen</strong><span data-i18n="p.limon.origen">Coquimbo y Valparaíso</span></div>
+          <div><strong data-i18n="lbl.temporada">Temporada</strong><span data-i18n="p.limon.temporada">Todo el año · mayor volumen mayo – septiembre</span></div>
+          <div><strong data-i18n="lbl.mercados">Mercados</strong><span data-i18n="p.limon.mercados">Europa, Medio Oriente</span></div>
+          <div><strong data-i18n="lbl.presentaciones">Presentaciones</strong><span data-i18n="p.limon.presentaciones">Cajas 15 kg / 18 kg</span></div>
+        </div>
+        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Solicitar especificaciones</a>
+      </div>
+    </div>
+
+    <div class="product-row" data-reveal>
+      <div class="product-media"><img src="nueces.jpg" alt="Nueces Agua de Frutos"></div>
+      <div class="product-info">
+        <span class="eyebrow" data-i18n="p.nueces.eyebrow">Fruta deshidratada</span>
+        <h3 data-i18n="p.nueces.title">Nueces</h3>
+        <p data-i18n="p.nueces.desc">Seleccionadas por calibre y color de mariposa, con calibrado para mercado gourmet e industria.</p>
+        <div class="spec-list">
+          <div><strong data-i18n="lbl.origen">Origen</strong><span data-i18n="p.nueces.origen">Valle Central, Chile</span></div>
+          <div><strong data-i18n="lbl.temporada">Temporada</strong><span data-i18n="p.nueces.temporada">Disponible todo el año</span></div>
+          <div><strong data-i18n="lbl.mercados">Mercados</strong><span data-i18n="p.nueces.mercados">Europa, Asia</span></div>
+          <div><strong data-i18n="lbl.presentaciones">Presentaciones</strong><span data-i18n="p.nueces.presentaciones">Granel 12,5 kg · retail 200 g / 500 g</span></div>
+        </div>
+        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Solicitar especificaciones</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ORIGEN -->
+<section class="origen" id="origen">
+  <div class="wrap origen-grid">
+    <div class="origen-map" data-reveal>
+      <svg viewBox="0 0 200 460" fill="none">
+        <path d="M100 10C118 40 130 70 128 110C126 150 108 175 112 210C116 245 132 265 130 300C128 335 108 355 112 388C115 410 108 430 100 450C92 430 85 410 88 388C92 355 72 335 70 300C68 265 84 245 88 210C92 175 74 150 72 110C70 70 82 40 100 10Z" stroke="#d7c9b8" stroke-width="1.4"/>
+        <circle cx="100" cy="130" r="4" fill="#d7c9b8"/>
+        <circle cx="98" cy="230" r="4" fill="#d7c9b8"/>
+        <circle cx="102" cy="310" r="4" fill="#d7c9b8"/>
+        <circle cx="97" cy="380" r="4" fill="#d7c9b8"/>
+        <text x="112" y="134" class="market-label" font-family="Inter">Valle Central</text>
+        <text x="110" y="234" class="market-label" font-family="Inter">Maule</text>
+        <text x="114" y="314" class="market-label" font-family="Inter">Ñuble</text>
+        <text x="109" y="384" class="market-label" font-family="Inter">Biobío</text>
+      </svg>
+    </div>
+    <div data-reveal>
+      <span class="eyebrow" data-i18n="origen.eyebrow">Origen</span>
+      <h2 style="margin-top:16px; margin-bottom:40px;" data-i18n="origen.title">De la cordillera al mar, una selección con nombre y apellido</h2>
+      <div class="origen-list">
+        <div><strong data-i18n="origen.l1.k">Origen</strong><span data-i18n="origen.l1.v">Valles productivos entre la Región de Coquimbo y Biobío, con climas propios para cada especie.</span></div>
+        <div><strong data-i18n="origen.l2.k">Selección</strong><span data-i18n="origen.l2.v">Cada lote se elige en campo según calibre, madurez y condición sanitaria.</span></div>
+        <div><strong data-i18n="origen.l3.k">Productores</strong><span data-i18n="origen.l3.v">Relaciones directas y de largo plazo con productores chilenos.</span></div>
+        <div><strong data-i18n="origen.l4.k">Temporadas</strong><span data-i18n="origen.l4.v">Calendario de cosecha propio para cada línea, fresca y deshidratada.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MERCADOS -->
+<section class="mercados" id="mercados">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow" data-i18n="mercados.eyebrow">Mercados</span>
+      <h2 data-i18n="mercados.title">Presencia internacional</h2>
+      <p data-i18n="mercados.lead">Despachamos hacia los mercados más exigentes, con logística adaptada a cada destino.</p>
+    </div>
+    <div class="mercados-map">
+      <svg viewBox="0 0 900 380" fill="none">
+        <circle cx="90" cy="300" r="5" class="market-dot origin"/>
+        <text x="60" y="326" class="market-label origin" font-family="Inter" data-i18n="mkt.chile">Chile</text>
+
+        <path class="market-line" d="M90,300 Q160,220 240,190" stroke="#d7c9b8" stroke-width="1.4"/>
+        <circle cx="240" cy="190" r="4" class="market-dot"/>
+        <text x="250" y="186" class="market-label" font-family="Inter" data-i18n="mkt.latam">Latinoamérica</text>
+
+        <path class="market-line" d="M90,300 Q280,120 480,75" stroke="#d7c9b8" stroke-width="1.4"/>
+        <circle cx="480" cy="75" r="4" class="market-dot"/>
+        <text x="490" y="71" class="market-label" font-family="Inter" data-i18n="mkt.europa">Europa</text>
+
+        <path class="market-line" d="M90,300 Q340,260 580,200" stroke="#d7c9b8" stroke-width="1.4"/>
+        <circle cx="580" cy="200" r="4" class="market-dot"/>
+        <text x="590" y="196" class="market-label" font-family="Inter" data-i18n="mkt.medio">Medio Oriente</text>
+
+        <path class="market-line" d="M90,300 Q420,290 760,140" stroke="#d7c9b8" stroke-width="1.4"/>
+        <circle cx="760" cy="140" r="4" class="market-dot"/>
+        <text x="770" y="136" class="market-label" font-family="Inter" data-i18n="mkt.asia">Asia</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="proceso" id="proceso">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow" data-i18n="proceso.eyebrow">Proceso</span>
+      <h2 data-i18n="proceso.title">De la selección al puerto de destino</h2>
+      <p data-i18n="proceso.lead">Cuatro etapas, un mismo estándar de calidad en cada una.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-step" data-reveal>
+        <div class="tl-media tex tex-fresca"><span class="tl-num">01</span></div>
+        <h3 data-i18n="proceso.s1.t">Selección</h3>
+        <p data-i18n="proceso.s1.d">Elegimos cada lote en campo junto al productor, según calibre y calidad.</p>
+      </div>
+      <div class="tl-step" data-reveal>
+        <div class="tl-media tex tex-deshidratada"><span class="tl-num">02</span></div>
+        <h3 data-i18n="proceso.s2.t">Clasificación</h3>
+        <p data-i18n="proceso.s2.d">Proceso y clasificación adaptados al producto y al mercado de destino.</p>
+      </div>
+      <div class="tl-step" data-reveal>
+        <div class="tl-media tex tex-terracota"><span class="tl-num">03</span></div>
+        <h3 data-i18n="proceso.s3.t">Calidad</h3>
+        <p data-i18n="proceso.s3.d">Control antes del despacho para asegurar que cada envío cumpla lo acordado.</p>
+      </div>
+      <div class="tl-step" data-reveal>
+        <div class="tl-media tex tex-nogal"><span class="tl-num">04</span></div>
+        <h3 data-i18n="proceso.s4.t">Exportación</h3>
+        <p data-i18n="proceso.s4.d">Coordinación de despacho FOB o CIF según la necesidad logística del comprador.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPROMISO -->
+<section class="compromiso">
+  <div class="wrap compromiso-grid">
+    <div class="compromiso-media tex has-photo" style="background-image:url('montana.jpg');" data-reveal></div>
+    <div class="compromiso-cols" data-reveal>
       <div>
-        <span class="eyebrow" style="color:var(--gold-500);">Contacto</span>
-        <h2 style="margin-top:14px;">Coticemos tu próximo pedido</h2>
-        <p class="lead">Contanos qué fruta necesitás, en qué volumen y para qué mercado, y te respondemos con una propuesta.</p>
-        <div class="contact-info">
-          <div><strong>Email</strong>contacto@aguadefrutos.cl</div>
-          <div><strong>Teléfono / WhatsApp</strong>+56 9 0000 0000</div>
-          <div><strong>Ubicación</strong>Chile</div>
-        </div>
+        <h3 data-i18n="compromiso.c1.t">Trazabilidad</h3>
+        <p data-i18n="compromiso.c1.d">Sabemos de qué productor y qué campo viene cada lote que comercializamos.</p>
       </div>
-      <form onsubmit="event.preventDefault(); this.querySelector('.form-submit').textContent='¡Enviado!';">
-        <div class="row2">
-          <div>
-            <label for="name">Nombre</label>
-            <input id="name" type="text" required placeholder="Tu nombre">
-          </div>
-          <div>
-            <label for="company">Empresa</label>
-            <input id="company" type="text" placeholder="Nombre de tu empresa">
-          </div>
-        </div>
-        <div class="row2">
-          <div>
-            <label for="email">Email</label>
-            <input id="email" type="email" required placeholder="tu@empresa.com">
-          </div>
-          <div>
-            <label for="country">País</label>
-            <input id="country" type="text" placeholder="País de destino">
-          </div>
-        </div>
-        <div>
-          <label for="message">Mensaje</label>
-          <textarea id="message" placeholder="Contanos qué fruta y volumen te interesa"></textarea>
-        </div>
-        <button type="submit" class="form-submit">Enviar consulta</button>
-        <p class="form-note">Este formulario es solo de muestra: para recibir los mensajes hay que conectarlo a un email o servicio de formularios.</p>
-      </form>
+      <div>
+        <h3 data-i18n="compromiso.c2.t">Empaque a medida</h3>
+        <p data-i18n="compromiso.c2.d">Adaptamos formato y presentación según el destino y el comprador.</p>
+      </div>
+      <div>
+        <h3 data-i18n="compromiso.c3.t">Acompañamiento</h3>
+        <p data-i18n="compromiso.c3.d">Coordinamos cada etapa, desde la cotización hasta la llegada del pedido.</p>
+      </div>
     </div>
-  </section>
-</main>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="wrap contacto-grid">
+    <div data-reveal>
+      <img src="logo-wordmark.png" alt="Agua de Frutos" class="contacto-logo">
+      <p class="contacto-phrase" data-i18n="contacto.phrase">Coticemos tu próximo pedido.</p>
+      <div class="contacto-info">
+        <div><strong data-i18n="contacto.email.k">Email</strong>contacto@aguadefrutos.cl</div>
+        <div><strong data-i18n="contacto.tel.k">Teléfono / WhatsApp</strong>+56 9 7463 1831</div>
+        <div><strong data-i18n="contacto.ubi.k">Ubicación</strong>Chile</div>
+      </div>
+      <div class="social-row">
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+    <form data-reveal onsubmit="event.preventDefault(); this.querySelector('.form-submit').textContent = (currentLang==='en' ? 'Sent' : 'Enviado');">
+      <div class="row2">
+        <div><label for="name" data-i18n="form.name">Nombre</label><input id="name" type="text" required data-i18n-placeholder="form.name.ph" placeholder="Tu nombre"></div>
+        <div><label for="company" data-i18n="form.company">Empresa</label><input id="company" type="text" data-i18n-placeholder="form.company.ph" placeholder="Nombre de tu empresa"></div>
+      </div>
+      <div class="row2">
+        <div><label for="email" data-i18n="form.email">Email</label><input id="email" type="email" required placeholder="tu@empresa.com"></div>
+        <div><label for="country" data-i18n="form.country">País</label><input id="country" type="text" data-i18n-placeholder="form.country.ph" placeholder="País de destino"></div>
+      </div>
+      <div><label for="message" data-i18n="form.message">Mensaje</label><textarea id="message" data-i18n-placeholder="form.message.ph" placeholder="Contanos qué fruta y volumen te interesa"></textarea></div>
+      <button type="submit" class="form-submit" data-i18n="form.submit">Enviar consulta</button>
+      <p class="form-note" data-i18n="form.note">Formulario de muestra: para recibir los mensajes hay que conectarlo a un email o servicio de formularios.</p>
+    </form>
+  </div>
+</section>
 
 <footer>
-  <div class="wrap footer-inner">
-    <div class="footer-brand">
-      <img src="logo.png" alt="Agua de Frutos" style="height:26px; width:auto;">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <img src="logo-wordmark.png" alt="Agua de Frutos" class="footer-logo">
+        <p style="max-width:36ch; color:rgba(245,241,234,0.55); font-size:0.92rem;" data-i18n="footer.tagline">Selección de origen, calidad y productores chilenos para el mundo.</p>
+      </div>
+      <div>
+        <label style="display:block; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(245,241,234,0.5); margin-bottom:14px;" data-i18n="footer.news">Novedades de temporada</label>
+        <div class="newsletter">
+          <input type="email" data-i18n-placeholder="footer.news.ph" placeholder="tu@email.com">
+          <button type="button" data-i18n="footer.news.btn">Suscribirme</button>
+        </div>
+        <nav style="margin-top:34px;">
+          <a href="#nosotros" data-i18n="nav.nosotros">Nosotros</a>
+          <a href="#productos" data-i18n="nav.coleccion">Colección</a>
+          <a href="#origen" data-i18n="nav.origen">Origen</a>
+          <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
+        </nav>
+      </div>
     </div>
-    <nav>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#productos">Productos</a>
-      <a href="#proceso">Proceso</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copy">© 2026 Comercializadora Agua de Frutos — Chile</span>
+      <span data-i18n="footer.rights">Todos los derechos reservados</span>
+    </div>
   </div>
-  <p class="footer-bottom">© 2026 Comercializadora Agua de Frutos — Chile</p>
 </footer>
+
+<script>
+  const translations = {
+    es: {
+      pageTitle: "Agua de Frutos — Origen chileno de excelencia",
+      pageDesc: "Agua de Frutos. Selección de origen, calidad y productores. Exportación de fruta fresca y deshidratada desde Chile hacia los mercados más exigentes del mundo.",
+      "nav.nosotros":"Nosotros","nav.coleccion":"Colección","nav.origen":"Origen","nav.proceso":"Proceso","nav.contacto":"Contacto","nav.cta":"Contactar",
+      "hero.eyebrow":"Comercializadora Agua de Frutos · Chile",
+      "hero.title":"Fruta <em>seleccionada</em> para llegar lejos.",
+      "hero.lead":"Exportamos y comercializamos fruta fresca y fruta deshidratada de calidad, trabajando con productores chilenos en cada etapa: selección, proceso y despacho a destino.",
+      "hero.cta1":"Ver catálogo","hero.cta2":"Hablar con nosotros",
+      "nosotros.quote":"\"No exportamos solamente fruta.<br>Exportamos confianza.\"",
+      "nosotros.p1":"Agua de Frutos nace en Chile para seleccionar lo que la tierra ofrece en su mejor punto: origen, calidad y el trabajo de productores que conocemos de cerca.",
+      "nosotros.p2":"Cada envío es el resultado de un criterio de selección heredado de nuestra experiencia junto a Fruit Cascade Exports en Argentina, aplicado ahora a la fruta chilena.",
+      "seleccion.label":"Categoría",
+      "seleccion.fresca.title":"Fruta fresca","seleccion.fresca.desc":"Kiwi, palta, cereza y limón, cosechados y calibrados por temporada.",
+      "seleccion.deshidratada.title":"Fruta deshidratada","seleccion.deshidratada.desc":"Ciruela y pasas de uva, procesadas para conservar su calidad de exportación.",
+      "catalogo.eyebrow":"Colección","catalogo.title":"Lo que seleccionamos","catalogo.lead":"Cada línea responde a un origen, una temporada y un estándar de calidad definidos.",
+      "lbl.origen":"Origen","lbl.temporada":"Temporada","lbl.mercados":"Mercados","lbl.presentaciones":"Presentaciones","lbl.cta":"Solicitar especificaciones",
+      "p.ciruela.eyebrow":"Fruta deshidratada","p.ciruela.title":"Ciruela seca","p.ciruela.desc":"Ciruelas secas premium procesadas con estándares internacionales. Ofrecemos una gama completa de tamaños adaptados a la demanda del cliente, aptas para procesamiento de alimentos, panificación y consumo directo.",
+      "p.ciruela.origen":"Valle Central, Chile","p.ciruela.temporada":"Disponible todo el año","p.ciruela.mercados":"Asia, Europa","p.ciruela.presentaciones":"Contenedores a granel o empaque a medida con marca privada.",
+      "p.pasas.eyebrow":"Fruta deshidratada","p.pasas.title":"Pasas de uva","p.pasas.desc":"Rubias y morenas, clasificadas por tamaño para consumo directo e industria.",
+      "p.pasas.origen":"Valle de Copiapó y Elqui","p.pasas.temporada":"Disponible todo el año","p.pasas.mercados":"Asia, Medio Oriente","p.pasas.presentaciones":"Contenedores a granel o empaque a medida con marca privada.",
+      "p.nueces.eyebrow":"Fruta deshidratada","p.nueces.title":"Nueces","p.nueces.desc":"Seleccionadas por calibre y color de mariposa, con calibrado para mercado gourmet e industria.",
+      "p.nueces.origen":"Valle Central, Chile","p.nueces.temporada":"Disponible todo el año","p.nueces.mercados":"Europa, Asia","p.nueces.presentaciones":"Granel 12,5 kg · retail 200 g / 500 g",
+      "p.kiwi.eyebrow":"Fruta fresca","p.kiwi.title":"Kiwi","p.kiwi.desc":"Cosechado y calibrado por temporada, con manejo poscosecha cuidado.",
+      "p.kiwi.origen":"Maule y Biobío","p.kiwi.temporada":"Mayo – octubre","p.kiwi.mercados":"Asia, Europa","p.kiwi.presentaciones":"Cajas 3,5 kg / 10 kg",
+      "p.palta.eyebrow":"Fruta fresca","p.palta.title":"Palta","p.palta.desc":"Variedad Hass, seleccionada por calibre y punto óptimo de madurez.",
+      "p.palta.origen":"Valparaíso y Petorca","p.palta.temporada":"Septiembre – marzo","p.palta.mercados":"Europa, Asia, Latinoamérica","p.palta.presentaciones":"Cajas 4 kg / 10 kg",
+      "p.cereza.eyebrow":"Fruta fresca","p.cereza.title":"Cereza","p.cereza.desc":"Fruta de temporada corta, con logística preparada para envío aéreo y marítimo.",
+      "p.cereza.origen":"O'Higgins y Ñuble","p.cereza.temporada":"Noviembre – enero","p.cereza.mercados":"China, Hong Kong, Asia","p.cereza.presentaciones":"Cajas 5 kg · clamshell retail",
+      "p.limon.eyebrow":"Fruta fresca","p.limon.title":"Limón fresco","p.limon.desc":"Seleccionado por calibre, color y contenido de jugo para exportación.",
+      "p.limon.origen":"Coquimbo y Valparaíso","p.limon.temporada":"Todo el año · mayor volumen mayo – septiembre","p.limon.mercados":"Europa, Medio Oriente","p.limon.presentaciones":"Cajas 15 kg / 18 kg",
+      "origen.eyebrow":"Origen","origen.title":"De la cordillera al mar, una selección con nombre y apellido",
+      "origen.l1.k":"Origen","origen.l1.v":"Valles productivos entre la Región de Coquimbo y Biobío, con climas propios para cada especie.",
+      "origen.l2.k":"Selección","origen.l2.v":"Cada lote se elige en campo según calibre, madurez y condición sanitaria.",
+      "origen.l3.k":"Productores","origen.l3.v":"Relaciones directas y de largo plazo con productores chilenos.",
+      "origen.l4.k":"Temporadas","origen.l4.v":"Calendario de cosecha propio para cada línea, fresca y deshidratada.",
+      "mercados.eyebrow":"Mercados","mercados.title":"Presencia internacional","mercados.lead":"Despachamos hacia los mercados más exigentes, con logística adaptada a cada destino.",
+      "mkt.chile":"Chile","mkt.latam":"Latinoamérica","mkt.europa":"Europa","mkt.medio":"Medio Oriente","mkt.asia":"Asia",
+      "proceso.eyebrow":"Proceso","proceso.title":"De la selección al puerto de destino","proceso.lead":"Cuatro etapas, un mismo estándar de calidad en cada una.",
+      "proceso.s1.t":"Selección","proceso.s1.d":"Elegimos cada lote en campo junto al productor, según calibre y calidad.",
+      "proceso.s2.t":"Clasificación","proceso.s2.d":"Proceso y clasificación adaptados al producto y al mercado de destino.",
+      "proceso.s3.t":"Calidad","proceso.s3.d":"Control antes del despacho para asegurar que cada envío cumpla lo acordado.",
+      "proceso.s4.t":"Exportación","proceso.s4.d":"Coordinación de despacho FOB o CIF según la necesidad logística del comprador.",
+      "compromiso.c1.t":"Trazabilidad","compromiso.c1.d":"Sabemos de qué productor y qué campo viene cada lote que comercializamos.",
+      "compromiso.c2.t":"Empaque a medida","compromiso.c2.d":"Adaptamos formato y presentación según el destino y el comprador.",
+      "compromiso.c3.t":"Acompañamiento","compromiso.c3.d":"Coordinamos cada etapa, desde la cotización hasta la llegada del pedido.",
+      "contacto.phrase":"Coticemos tu próximo pedido.",
+      "contacto.email.k":"Email","contacto.tel.k":"Teléfono / WhatsApp","contacto.ubi.k":"Ubicación",
+      "form.name":"Nombre","form.name.ph":"Tu nombre","form.company":"Empresa","form.company.ph":"Nombre de tu empresa",
+      "form.email":"Email","form.country":"País","form.country.ph":"País de destino",
+      "form.message":"Mensaje","form.message.ph":"Contanos qué fruta y volumen te interesa",
+      "form.submit":"Enviar consulta","form.note":"Formulario de muestra: para recibir los mensajes hay que conectarlo a un email o servicio de formularios.",
+      "footer.tagline":"Selección de origen, calidad y productores chilenos para el mundo.",
+      "footer.news":"Novedades de temporada","footer.news.ph":"tu@email.com","footer.news.btn":"Suscribirme",
+      "footer.copy":"© 2026 Comercializadora Agua de Frutos — Chile","footer.rights":"Todos los derechos reservados"
+    },
+    en: {
+      pageTitle: "Agua de Frutos — Chilean Origin of Excellence",
+      pageDesc: "Agua de Frutos. Origin, quality and grower selection. Exporting fresh and dehydrated fruit from Chile to the world's most demanding markets.",
+      "nav.nosotros":"About","nav.coleccion":"Collection","nav.origen":"Origin","nav.proceso":"Process","nav.contacto":"Contact","nav.cta":"Contact us",
+      "hero.eyebrow":"Agua de Frutos Trading Co. · Chile",
+      "hero.title":"Fruit <em>selected</em> to travel far.",
+      "hero.lead":"We export and trade quality fresh and dehydrated fruit, working with Chilean growers at every stage: selection, processing and dispatch to destination.",
+      "hero.cta1":"View catalogue","hero.cta2":"Talk to us",
+      "nosotros.quote":"\"We don't just export fruit.<br>We export trust.\"",
+      "nosotros.p1":"Agua de Frutos was born in Chile to select what the land offers at its very best: origin, quality, and the work of growers we know closely.",
+      "nosotros.p2":"Every shipment reflects a selection standard inherited from our experience alongside Fruit Cascade Exports in Argentina, now applied to Chilean fruit.",
+      "seleccion.label":"Category",
+      "seleccion.fresca.title":"Fresh fruit","seleccion.fresca.desc":"Kiwi, avocado, cherry and lemon, harvested and sized by season.",
+      "seleccion.deshidratada.title":"Dehydrated fruit","seleccion.deshidratada.desc":"Plums and raisins, processed to preserve export-grade quality.",
+      "catalogo.eyebrow":"Collection","catalogo.title":"What we select","catalogo.lead":"Each line reflects a defined origin, season and quality standard.",
+      "lbl.origen":"Origin","lbl.temporada":"Season","lbl.mercados":"Markets","lbl.presentaciones":"Packaging","lbl.cta":"Request specifications",
+      "p.ciruela.eyebrow":"Dehydrated fruit","p.ciruela.title":"Dried plum","p.ciruela.desc":"Premium dried plums processed to international standards. We offer a full range of sizes tailored to customer demand, suitable for food processing, baking and direct consumption.",
+      "p.ciruela.origen":"Central Valley, Chile","p.ciruela.temporada":"Available year-round","p.ciruela.mercados":"Asia, Europe","p.ciruela.presentaciones":"Bulk containers or private-label custom packaging.",
+      "p.pasas.eyebrow":"Dehydrated fruit","p.pasas.title":"Raisins","p.pasas.desc":"Golden and dark, sorted by size for direct consumption and industry.",
+      "p.pasas.origen":"Copiapó and Elqui Valley","p.pasas.temporada":"Available year-round","p.pasas.mercados":"Asia, Middle East","p.pasas.presentaciones":"Bulk containers or private-label custom packaging.",
+      "p.nueces.eyebrow":"Dehydrated fruit","p.nueces.title":"Walnuts","p.nueces.desc":"Selected by size and kernel colour, graded for the gourmet market and industry.",
+      "p.nueces.origen":"Central Valley, Chile","p.nueces.temporada":"Available year-round","p.nueces.mercados":"Europe, Asia","p.nueces.presentaciones":"Bulk 12.5 kg · retail 200 g / 500 g",
+      "p.kiwi.eyebrow":"Fresh fruit","p.kiwi.title":"Kiwi","p.kiwi.desc":"Harvested and sized by season, with careful post-harvest handling.",
+      "p.kiwi.origen":"Maule and Biobío","p.kiwi.temporada":"May – October","p.kiwi.mercados":"Asia, Europe","p.kiwi.presentaciones":"3.5 kg / 10 kg boxes",
+      "p.palta.eyebrow":"Fresh fruit","p.palta.title":"Avocado","p.palta.desc":"Hass variety, selected by size and optimal ripeness.",
+      "p.palta.origen":"Valparaíso and Petorca","p.palta.temporada":"September – March","p.palta.mercados":"Europe, Asia, Latin America","p.palta.presentaciones":"4 kg / 10 kg boxes",
+      "p.cereza.eyebrow":"Fresh fruit","p.cereza.title":"Cherry","p.cereza.desc":"Short-season fruit, with logistics ready for air and sea freight.",
+      "p.cereza.origen":"O'Higgins and Ñuble","p.cereza.temporada":"November – January","p.cereza.mercados":"China, Hong Kong, Asia","p.cereza.presentaciones":"5 kg boxes · retail clamshell",
+      "p.limon.eyebrow":"Fresh fruit","p.limon.title":"Fresh lemon","p.limon.desc":"Selected by size, color and juice content for export.",
+      "p.limon.origen":"Coquimbo and Valparaíso","p.limon.temporada":"Year-round · higher volume May – September","p.limon.mercados":"Europe, Middle East","p.limon.presentaciones":"15 kg / 18 kg boxes",
+      "origen.eyebrow":"Origin","origen.title":"From the Andes to the sea, a selection with a name behind it",
+      "origen.l1.k":"Origin","origen.l1.v":"Productive valleys between the Coquimbo and Biobío regions, each with its own climate suited to every species.",
+      "origen.l2.k":"Selection","origen.l2.v":"Each lot is chosen in the field by size, ripeness and sanitary condition.",
+      "origen.l3.k":"Growers","origen.l3.v":"Direct, long-term relationships with Chilean growers.",
+      "origen.l4.k":"Seasons","origen.l4.v":"A dedicated harvest calendar for each line, fresh and dehydrated.",
+      "mercados.eyebrow":"Markets","mercados.title":"International presence","mercados.lead":"We ship to the most demanding markets, with logistics tailored to each destination.",
+      "mkt.chile":"Chile","mkt.latam":"Latin America","mkt.europa":"Europe","mkt.medio":"Middle East","mkt.asia":"Asia",
+      "proceso.eyebrow":"Process","proceso.title":"From selection to the port of destination","proceso.lead":"Four stages, the same quality standard throughout.",
+      "proceso.s1.t":"Selection","proceso.s1.d":"We choose each lot in the field with the grower, based on size and quality.",
+      "proceso.s2.t":"Classification","proceso.s2.d":"Processing and classification adapted to the product and the destination market.",
+      "proceso.s3.t":"Quality","proceso.s3.d":"Inspection prior to dispatch to ensure every shipment meets what was agreed.",
+      "proceso.s4.t":"Export","proceso.s4.d":"FOB or CIF dispatch coordination based on the buyer's logistics needs.",
+      "compromiso.c1.t":"Traceability","compromiso.c1.d":"We know which grower and which field every lot we trade comes from.",
+      "compromiso.c2.t":"Tailored packaging","compromiso.c2.d":"We adapt format and presentation to the destination and buyer.",
+      "compromiso.c3.t":"Support","compromiso.c3.d":"We coordinate every stage, from quotation to the order's arrival.",
+      "contacto.phrase":"Let's quote your next order.",
+      "contacto.email.k":"Email","contacto.tel.k":"Phone / WhatsApp","contacto.ubi.k":"Location",
+      "form.name":"Name","form.name.ph":"Your name","form.company":"Company","form.company.ph":"Your company name",
+      "form.email":"Email","form.country":"Country","form.country.ph":"Destination country",
+      "form.message":"Message","form.message.ph":"Tell us which fruit and volume you're interested in",
+      "form.submit":"Send inquiry","form.note":"Sample form: to receive messages it needs to be connected to an email or form service.",
+      "footer.tagline":"Origin, quality and Chilean grower selection for the world.",
+      "footer.news":"Seasonal updates","footer.news.ph":"you@email.com","footer.news.btn":"Subscribe",
+      "footer.copy":"© 2026 Comercializadora Agua de Frutos — Chile","footer.rights":"All rights reserved"
+    }
+  };
+
+  let currentLang = 'es';
+
+  function applyLang(lang){
+    currentLang = lang;
+    const dict = translations[lang];
+    document.documentElement.lang = (lang === 'en') ? 'en' : 'es-CL';
+    document.getElementById('pageTitle').textContent = dict.pageTitle;
+    document.getElementById('pageDesc').setAttribute('content', dict.pageDesc);
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if(dict[key] !== undefined){ el.innerHTML = dict[key]; }
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if(dict[key] !== undefined){ el.setAttribute('placeholder', dict[key]); }
+    });
+    document.querySelectorAll('.lang-switch button').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+  }
+
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
+  });
+
+  const nav = document.getElementById('siteNav');
+  const brandLogo = document.querySelector('.brand img');
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 40;
+    nav.classList.toggle('scrolled', scrolled);
+    if(brandLogo){
+      const wanted = scrolled ? brandLogo.dataset.logoLight : brandLogo.dataset.logoDark;
+      if(wanted && brandLogo.getAttribute('src') !== wanted){ brandLogo.setAttribute('src', wanted); }
+    }
+  }, { passive:true });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in-view'); } });
+  }, { threshold:0.15 });
+  document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+
+  const mm = document.querySelector('.mercados-map');
+  if(mm){
+    const marketLines = mm.querySelectorAll('.market-line');
+    marketLines.forEach(line => {
+      const len = line.getTotalLength();
+      line.style.strokeDasharray = len;
+      line.style.strokeDashoffset = len;
+    });
+    const mmObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          marketLines.forEach(line => { line.style.strokeDashoffset = 0; });
+          mmObs.unobserve(e.target);
+        }
+      });
+    }, { threshold:0.2 });
+    mmObs.observe(mm);
+  }
+</script>
 
 </body>
 </html>
