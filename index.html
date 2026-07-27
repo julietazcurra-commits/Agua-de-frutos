@@ -1,3 +1,4 @@
+html
 <!DOCTYPE html>
 <html lang="es-CL">
 <head>
@@ -194,6 +195,10 @@
   .seleccion-block .inner h3{ font-size:2.1rem; margin-top:16px; text-decoration:none !important; border-bottom:none !important; }
   .seleccion-block .inner p{ margin-top:16px; font-size:0.94rem; line-height:1.75; max-width:32ch; color:rgba(245,241,234,0.82); }
   .seleccion-block .tex{ position:absolute; inset:0; transition:transform .7s ease; }
+  .seleccion-block .tex.has-photo::before{
+    content:''; position:absolute; inset:0; background:var(--cocoa);
+    mix-blend-mode:color; z-index:1; pointer-events:none;
+  }
   .seleccion-block:hover .tex{ transform:scale(1.06); }
   .seleccion-block::before{ content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(74,52,42,0.1), rgba(74,52,42,0.78)); z-index:1; }
   .seleccion-block, .seleccion-block *{ text-decoration:none; }
@@ -250,7 +255,7 @@
   @media (max-width:860px){ .timeline{ grid-template-columns:repeat(2, 1fr); gap:48px 32px; } }
   @media (max-width:520px){ .timeline{ grid-template-columns:1fr; gap:48px; } }
   .tl-step{ position:relative; }
-  .tl-media{ aspect-ratio:3/4; position:relative; margin-bottom:28px; }
+  .tl-media{ aspect-ratio:4/3; position:relative; margin-bottom:22px; }
   .tl-num{ position:absolute; top:18px; left:18px; z-index:2; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.7rem; color:var(--marfil); }
   .tl-step h3{ font-size:1.2rem; margin-bottom:10px; }
   .tl-step p{ font-size:0.92rem; line-height:1.75; color:#7d5a44; }
@@ -403,14 +408,14 @@
       <div class="product-info">
         <span class="eyebrow" data-i18n="p.ciruela.eyebrow">Fruta deshidratada</span>
         <h3 data-i18n="p.ciruela.title">Ciruela seca</h3>
-        <p data-i18n="p.ciruela.desc">Seleccionada por calibre y humedad, para consumo directo e industria alimentaria.</p>
+        <p data-i18n="p.ciruela.desc">En condición natural con carozo, con humedad controlada y calibre consistente. Ofrecemos una gama completa de tamaños adaptados a la demanda del cliente, aptas para procesamiento de alimentos, panificación y consumo directo.</p>
         <div class="spec-list">
           <div><strong data-i18n="lbl.origen">Origen</strong><span data-i18n="p.ciruela.origen">Valle Central, Chile</span></div>
           <div><strong data-i18n="lbl.temporada">Temporada</strong><span data-i18n="p.ciruela.temporada">Disponible todo el año</span></div>
-          <div><strong data-i18n="lbl.mercados">Mercados</strong><span data-i18n="p.ciruela.mercados">Asia, Europa</span></div>
-          <div><strong data-i18n="lbl.presentaciones">Presentaciones</strong><span data-i18n="p.ciruela.presentaciones">Granel 12,5 kg · retail 250 g / 500 g</span></div>
+          <div><strong data-i18n="lbl.mercados">Mercados</strong><span data-i18n="p.ciruela.mercados">Asia, Europa, Medio Oriente y Latinoamérica</span></div>
+          <div><strong data-i18n="lbl.presentaciones">Presentaciones</strong><span data-i18n="p.ciruela.presentaciones">A granel o sacos de 25 kg.</span></div>
         </div>
-        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Solicitar especificaciones</a>
+        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Enviar consulta</a>
       </div>
     </div>
 
@@ -419,14 +424,14 @@
       <div class="product-info">
         <span class="eyebrow" data-i18n="p.pasas.eyebrow">Fruta deshidratada</span>
         <h3 data-i18n="p.pasas.title">Pasas de uva</h3>
-        <p data-i18n="p.pasas.desc">Rubias y morenas, clasificadas por tamaño para consumo directo e industria.</p>
+        <p data-i18n="p.pasas.desc">Rubias, morenas y rosadas, clasificadas por tamaño para consumo directo e industria.</p>
         <div class="spec-list">
           <div><strong data-i18n="lbl.origen">Origen</strong><span data-i18n="p.pasas.origen">Valle de Copiapó y Elqui</span></div>
           <div><strong data-i18n="lbl.temporada">Temporada</strong><span data-i18n="p.pasas.temporada">Disponible todo el año</span></div>
           <div><strong data-i18n="lbl.mercados">Mercados</strong><span data-i18n="p.pasas.mercados">Asia, Medio Oriente</span></div>
-          <div><strong data-i18n="lbl.presentaciones">Presentaciones</strong><span data-i18n="p.pasas.presentaciones">Granel 10 kg · retail 200 g / 400 g</span></div>
+          <div><strong data-i18n="lbl.presentaciones">Presentaciones</strong><span data-i18n="p.pasas.presentaciones">A granel y fraccionado en cajas de 10 kg.</span></div>
         </div>
-        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Solicitar especificaciones</a>
+        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Enviar consulta</a>
       </div>
     </div>
 
@@ -438,11 +443,11 @@
         <p data-i18n="p.kiwi.desc">Cosechado y calibrado por temporada, con manejo poscosecha cuidado.</p>
         <div class="spec-list">
           <div><strong data-i18n="lbl.origen">Origen</strong><span data-i18n="p.kiwi.origen">Maule y Biobío</span></div>
-          <div><strong data-i18n="lbl.temporada">Temporada</strong><span data-i18n="p.kiwi.temporada">Mayo – octubre</span></div>
+          <div><strong data-i18n="lbl.temporada">Temporada</strong><span data-i18n="p.kiwi.temporada">Marzo – octubre</span></div>
           <div><strong data-i18n="lbl.mercados">Mercados</strong><span data-i18n="p.kiwi.mercados">Asia, Europa</span></div>
-          <div><strong data-i18n="lbl.presentaciones">Presentaciones</strong><span data-i18n="p.kiwi.presentaciones">Cajas 3,5 kg / 10 kg</span></div>
+          <div><strong data-i18n="lbl.presentaciones">Presentaciones</strong><span data-i18n="p.kiwi.presentaciones">Caja plástica de 10 kg.</span></div>
         </div>
-        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Solicitar especificaciones</a>
+        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Enviar consulta</a>
       </div>
     </div>
 
@@ -451,14 +456,14 @@
       <div class="product-info">
         <span class="eyebrow" data-i18n="p.palta.eyebrow">Fruta fresca</span>
         <h3 data-i18n="p.palta.title">Palta</h3>
-        <p data-i18n="p.palta.desc">Variedad Hass, seleccionada por calibre y punto óptimo de madurez.</p>
+        <p data-i18n="p.palta.desc">Variedad Hass, seleccionada por calibre y punto óptimo de conservación.</p>
         <div class="spec-list">
           <div><strong data-i18n="lbl.origen">Origen</strong><span data-i18n="p.palta.origen">Valparaíso y Petorca</span></div>
-          <div><strong data-i18n="lbl.temporada">Temporada</strong><span data-i18n="p.palta.temporada">Septiembre – marzo</span></div>
+          <div><strong data-i18n="lbl.temporada">Temporada</strong><span data-i18n="p.palta.temporada">Agosto – enero</span></div>
           <div><strong data-i18n="lbl.mercados">Mercados</strong><span data-i18n="p.palta.mercados">Europa, Asia, Latinoamérica</span></div>
-          <div><strong data-i18n="lbl.presentaciones">Presentaciones</strong><span data-i18n="p.palta.presentaciones">Cajas 4 kg / 10 kg</span></div>
+          <div><strong data-i18n="lbl.presentaciones">Presentaciones</strong><span data-i18n="p.palta.presentaciones">Según destino: caja plástica de 10 kg o caja de cartón de 4 kg.</span></div>
         </div>
-        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Solicitar especificaciones</a>
+        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Enviar consulta</a>
       </div>
     </div>
 
@@ -474,7 +479,7 @@
           <div><strong data-i18n="lbl.mercados">Mercados</strong><span data-i18n="p.cereza.mercados">China, Hong Kong, Asia</span></div>
           <div><strong data-i18n="lbl.presentaciones">Presentaciones</strong><span data-i18n="p.cereza.presentaciones">Cajas 5 kg · clamshell retail</span></div>
         </div>
-        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Solicitar especificaciones</a>
+        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Enviar consulta</a>
       </div>
     </div>
 
@@ -486,11 +491,11 @@
         <p data-i18n="p.limon.desc">Seleccionado por calibre, color y contenido de jugo para exportación.</p>
         <div class="spec-list">
           <div><strong data-i18n="lbl.origen">Origen</strong><span data-i18n="p.limon.origen">Coquimbo y Valparaíso</span></div>
-          <div><strong data-i18n="lbl.temporada">Temporada</strong><span data-i18n="p.limon.temporada">Todo el año · mayor volumen mayo – septiembre</span></div>
+          <div><strong data-i18n="lbl.temporada">Temporada</strong><span data-i18n="p.limon.temporada">Marzo – septiembre</span></div>
           <div><strong data-i18n="lbl.mercados">Mercados</strong><span data-i18n="p.limon.mercados">Europa, Medio Oriente</span></div>
           <div><strong data-i18n="lbl.presentaciones">Presentaciones</strong><span data-i18n="p.limon.presentaciones">Cajas 15 kg / 18 kg</span></div>
         </div>
-        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Solicitar especificaciones</a>
+        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Enviar consulta</a>
       </div>
     </div>
 
@@ -499,14 +504,14 @@
       <div class="product-info">
         <span class="eyebrow" data-i18n="p.nueces.eyebrow">Fruta deshidratada</span>
         <h3 data-i18n="p.nueces.title">Nueces</h3>
-        <p data-i18n="p.nueces.desc">Seleccionadas por calibre y color de mariposa, con calibrado para mercado gourmet e industria.</p>
+        <p data-i18n="p.nueces.desc">Disponibles en formato pulpa o con cáscara, clasificadas por color, para mercado gourmet e industria.</p>
         <div class="spec-list">
           <div><strong data-i18n="lbl.origen">Origen</strong><span data-i18n="p.nueces.origen">Valle Central, Chile</span></div>
-          <div><strong data-i18n="lbl.temporada">Temporada</strong><span data-i18n="p.nueces.temporada">Disponible todo el año</span></div>
+          <div><strong data-i18n="lbl.temporada">Temporada</strong><span data-i18n="p.nueces.temporada">Abril – junio</span></div>
           <div><strong data-i18n="lbl.mercados">Mercados</strong><span data-i18n="p.nueces.mercados">Europa, Asia</span></div>
-          <div><strong data-i18n="lbl.presentaciones">Presentaciones</strong><span data-i18n="p.nueces.presentaciones">Granel 12,5 kg · retail 200 g / 500 g</span></div>
+          <div><strong data-i18n="lbl.presentaciones">Presentaciones</strong><span data-i18n="p.nueces.presentaciones">Nuez pulpa en cajas de 10 kg; nuez con cáscara en sacos de 25 kg o a granel.</span></div>
         </div>
-        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Solicitar especificaciones</a>
+        <a href="#contacto" class="btn-spec" data-i18n="lbl.cta">Enviar consulta</a>
       </div>
     </div>
 
@@ -533,8 +538,8 @@
       <span class="eyebrow" data-i18n="origen.eyebrow">Origen</span>
       <h2 style="margin-top:16px; margin-bottom:40px;" data-i18n="origen.title">De la cordillera al mar, una selección con nombre y apellido</h2>
       <div class="origen-list">
-        <div><strong data-i18n="origen.l1.k">Origen</strong><span data-i18n="origen.l1.v">Valles productivos entre la Región de Coquimbo y Biobío, con climas propios para cada especie.</span></div>
-        <div><strong data-i18n="origen.l2.k">Selección</strong><span data-i18n="origen.l2.v">Cada lote se elige en campo según calibre, madurez y condición sanitaria.</span></div>
+        <div><strong data-i18n="origen.l1.k">Origen</strong><span data-i18n="origen.l1.v">Valles productivos entre la Región de Coquimbo y Biobío, con climas propios para cada cultivo.</span></div>
+        <div><strong data-i18n="origen.l2.k">Selección</strong><span data-i18n="origen.l2.v">Cada lote se elige en campo según calibre, conservación y condición sanitaria.</span></div>
         <div><strong data-i18n="origen.l3.k">Productores</strong><span data-i18n="origen.l3.v">Relaciones directas y de largo plazo con productores chilenos.</span></div>
         <div><strong data-i18n="origen.l4.k">Temporadas</strong><span data-i18n="origen.l4.v">Calendario de cosecha propio para cada línea, fresca y deshidratada.</span></div>
       </div>
@@ -554,6 +559,10 @@
       <svg viewBox="0 0 900 380" fill="none">
         <circle cx="90" cy="300" r="5" class="market-dot origin"/>
         <text x="60" y="326" class="market-label origin" font-family="Inter" data-i18n="mkt.chile">Chile</text>
+
+        <path class="market-line" d="M90,300 Q120,285 165,268" stroke="#d7c9b8" stroke-width="1.4"/>
+        <circle cx="165" cy="268" r="4" class="market-dot"/>
+        <text x="175" y="264" class="market-label" font-family="Inter" data-i18n="mkt.argentina">Argentina</text>
 
         <path class="market-line" d="M90,300 Q160,220 240,190" stroke="#d7c9b8" stroke-width="1.4"/>
         <circle cx="240" cy="190" r="4" class="market-dot"/>
@@ -706,28 +715,28 @@
       "seleccion.fresca.title":"Fruta fresca","seleccion.fresca.desc":"Kiwi, palta, cereza y limón, cosechados y calibrados por temporada.",
       "seleccion.deshidratada.title":"Fruta deshidratada","seleccion.deshidratada.desc":"Ciruela y pasas de uva, procesadas para conservar su calidad de exportación.",
       "catalogo.eyebrow":"Colección","catalogo.title":"Lo que seleccionamos","catalogo.lead":"Cada línea responde a un origen, una temporada y un estándar de calidad definidos.",
-      "lbl.origen":"Origen","lbl.temporada":"Temporada","lbl.mercados":"Mercados","lbl.presentaciones":"Presentaciones","lbl.cta":"Solicitar especificaciones",
-      "p.ciruela.eyebrow":"Fruta deshidratada","p.ciruela.title":"Ciruela seca","p.ciruela.desc":"Ciruelas secas premium procesadas con estándares internacionales. Ofrecemos una gama completa de tamaños adaptados a la demanda del cliente, aptas para procesamiento de alimentos, panificación y consumo directo.",
-      "p.ciruela.origen":"Valle Central, Chile","p.ciruela.temporada":"Disponible todo el año","p.ciruela.mercados":"Asia, Europa","p.ciruela.presentaciones":"Contenedores a granel o empaque a medida con marca privada.",
-      "p.pasas.eyebrow":"Fruta deshidratada","p.pasas.title":"Pasas de uva","p.pasas.desc":"Rubias y morenas, clasificadas por tamaño para consumo directo e industria.",
-      "p.pasas.origen":"Valle de Copiapó y Elqui","p.pasas.temporada":"Disponible todo el año","p.pasas.mercados":"Asia, Medio Oriente","p.pasas.presentaciones":"Contenedores a granel o empaque a medida con marca privada.",
-      "p.nueces.eyebrow":"Fruta deshidratada","p.nueces.title":"Nueces","p.nueces.desc":"Seleccionadas por calibre y color de mariposa, con calibrado para mercado gourmet e industria.",
-      "p.nueces.origen":"Valle Central, Chile","p.nueces.temporada":"Disponible todo el año","p.nueces.mercados":"Europa, Asia","p.nueces.presentaciones":"Granel 12,5 kg · retail 200 g / 500 g",
+      "lbl.origen":"Origen","lbl.temporada":"Temporada","lbl.mercados":"Mercados","lbl.presentaciones":"Presentaciones","lbl.cta":"Enviar consulta",
+      "p.ciruela.eyebrow":"Fruta deshidratada","p.ciruela.title":"Ciruela seca","p.ciruela.desc":"En condición natural con carozo, con humedad controlada y calibre consistente. Ofrecemos una gama completa de tamaños adaptados a la demanda del cliente, aptas para procesamiento de alimentos, panificación y consumo directo.",
+      "p.ciruela.origen":"Valle Central, Chile","p.ciruela.temporada":"Disponible todo el año","p.ciruela.mercados":"Asia, Europa, Medio Oriente y Latinoamérica","p.ciruela.presentaciones":"A granel o sacos de 25 kg.",
+      "p.pasas.eyebrow":"Fruta deshidratada","p.pasas.title":"Pasas de uva","p.pasas.desc":"Rubias, morenas y rosadas, clasificadas por tamaño para consumo directo e industria.",
+      "p.pasas.origen":"Valle de Copiapó y Elqui","p.pasas.temporada":"Disponible todo el año","p.pasas.mercados":"Asia, Medio Oriente","p.pasas.presentaciones":"A granel y fraccionado en cajas de 10 kg.",
+      "p.nueces.eyebrow":"Fruta deshidratada","p.nueces.title":"Nueces","p.nueces.desc":"Disponibles en formato pulpa o con cáscara, clasificadas por color, para mercado gourmet e industria.",
+      "p.nueces.origen":"Valle Central, Chile","p.nueces.temporada":"Abril – junio","p.nueces.mercados":"Europa, Asia","p.nueces.presentaciones":"Nuez pulpa en cajas de 10 kg; nuez con cáscara en sacos de 25 kg o a granel.",
       "p.kiwi.eyebrow":"Fruta fresca","p.kiwi.title":"Kiwi","p.kiwi.desc":"Cosechado y calibrado por temporada, con manejo poscosecha cuidado.",
-      "p.kiwi.origen":"Maule y Biobío","p.kiwi.temporada":"Mayo – octubre","p.kiwi.mercados":"Asia, Europa","p.kiwi.presentaciones":"Cajas 3,5 kg / 10 kg",
-      "p.palta.eyebrow":"Fruta fresca","p.palta.title":"Palta","p.palta.desc":"Variedad Hass, seleccionada por calibre y punto óptimo de madurez.",
-      "p.palta.origen":"Valparaíso y Petorca","p.palta.temporada":"Septiembre – marzo","p.palta.mercados":"Europa, Asia, Latinoamérica","p.palta.presentaciones":"Cajas 4 kg / 10 kg",
+      "p.kiwi.origen":"Maule y Biobío","p.kiwi.temporada":"Marzo – octubre","p.kiwi.mercados":"Asia, Europa","p.kiwi.presentaciones":"Caja plástica de 10 kg.",
+      "p.palta.eyebrow":"Fruta fresca","p.palta.title":"Palta","p.palta.desc":"Variedad Hass, seleccionada por calibre y punto óptimo de conservación.",
+      "p.palta.origen":"Valparaíso y Petorca","p.palta.temporada":"Agosto – enero","p.palta.mercados":"Europa, Asia, Latinoamérica","p.palta.presentaciones":"Según destino: caja plástica de 10 kg o caja de cartón de 4 kg.",
       "p.cereza.eyebrow":"Fruta fresca","p.cereza.title":"Cereza","p.cereza.desc":"Fruta de temporada corta, con logística preparada para envío aéreo y marítimo.",
       "p.cereza.origen":"O'Higgins y Ñuble","p.cereza.temporada":"Noviembre – enero","p.cereza.mercados":"China, Hong Kong, Asia","p.cereza.presentaciones":"Cajas 5 kg · clamshell retail",
       "p.limon.eyebrow":"Fruta fresca","p.limon.title":"Limón fresco","p.limon.desc":"Seleccionado por calibre, color y contenido de jugo para exportación.",
-      "p.limon.origen":"Coquimbo y Valparaíso","p.limon.temporada":"Todo el año · mayor volumen mayo – septiembre","p.limon.mercados":"Europa, Medio Oriente","p.limon.presentaciones":"Cajas 15 kg / 18 kg",
+      "p.limon.origen":"Coquimbo y Valparaíso","p.limon.temporada":"Marzo – septiembre","p.limon.mercados":"Europa, Medio Oriente","p.limon.presentaciones":"Cajas 15 kg / 18 kg",
       "origen.eyebrow":"Origen","origen.title":"De la cordillera al mar, una selección con nombre y apellido",
-      "origen.l1.k":"Origen","origen.l1.v":"Valles productivos entre la Región de Coquimbo y Biobío, con climas propios para cada especie.",
-      "origen.l2.k":"Selección","origen.l2.v":"Cada lote se elige en campo según calibre, madurez y condición sanitaria.",
+      "origen.l1.k":"Origen","origen.l1.v":"Valles productivos entre la Región de Coquimbo y Biobío, con climas propios para cada cultivo.",
+      "origen.l2.k":"Selección","origen.l2.v":"Cada lote se elige en campo según calibre, conservación y condición sanitaria.",
       "origen.l3.k":"Productores","origen.l3.v":"Relaciones directas y de largo plazo con productores chilenos.",
       "origen.l4.k":"Temporadas","origen.l4.v":"Calendario de cosecha propio para cada línea, fresca y deshidratada.",
       "mercados.eyebrow":"Mercados","mercados.title":"Presencia internacional","mercados.lead":"Despachamos hacia los mercados más exigentes, con logística adaptada a cada destino.",
-      "mkt.chile":"Chile","mkt.latam":"Latinoamérica","mkt.europa":"Europa","mkt.medio":"Medio Oriente","mkt.asia":"Asia",
+      "mkt.chile":"Chile","mkt.argentina":"Argentina","mkt.latam":"Latinoamérica","mkt.europa":"Europa","mkt.medio":"Medio Oriente","mkt.asia":"Asia",
       "proceso.eyebrow":"Proceso","proceso.title":"De la selección al puerto de destino","proceso.lead":"Cuatro etapas, un mismo estándar de calidad en cada una.",
       "proceso.s1.t":"Selección","proceso.s1.d":"Elegimos cada lote en campo junto al productor, según calibre y calidad.",
       "proceso.s2.t":"Clasificación","proceso.s2.d":"Proceso y clasificación adaptados al producto y al mercado de destino.",
@@ -761,28 +770,28 @@
       "seleccion.fresca.title":"Fresh fruit","seleccion.fresca.desc":"Kiwi, avocado, cherry and lemon, harvested and sized by season.",
       "seleccion.deshidratada.title":"Dehydrated fruit","seleccion.deshidratada.desc":"Plums and raisins, processed to preserve export-grade quality.",
       "catalogo.eyebrow":"Collection","catalogo.title":"What we select","catalogo.lead":"Each line reflects a defined origin, season and quality standard.",
-      "lbl.origen":"Origin","lbl.temporada":"Season","lbl.mercados":"Markets","lbl.presentaciones":"Packaging","lbl.cta":"Request specifications",
-      "p.ciruela.eyebrow":"Dehydrated fruit","p.ciruela.title":"Dried plum","p.ciruela.desc":"Premium dried plums processed to international standards. We offer a full range of sizes tailored to customer demand, suitable for food processing, baking and direct consumption.",
-      "p.ciruela.origen":"Central Valley, Chile","p.ciruela.temporada":"Available year-round","p.ciruela.mercados":"Asia, Europe","p.ciruela.presentaciones":"Bulk containers or private-label custom packaging.",
-      "p.pasas.eyebrow":"Dehydrated fruit","p.pasas.title":"Raisins","p.pasas.desc":"Golden and dark, sorted by size for direct consumption and industry.",
-      "p.pasas.origen":"Copiapó and Elqui Valley","p.pasas.temporada":"Available year-round","p.pasas.mercados":"Asia, Middle East","p.pasas.presentaciones":"Bulk containers or private-label custom packaging.",
-      "p.nueces.eyebrow":"Dehydrated fruit","p.nueces.title":"Walnuts","p.nueces.desc":"Selected by size and kernel colour, graded for the gourmet market and industry.",
-      "p.nueces.origen":"Central Valley, Chile","p.nueces.temporada":"Available year-round","p.nueces.mercados":"Europe, Asia","p.nueces.presentaciones":"Bulk 12.5 kg · retail 200 g / 500 g",
+      "lbl.origen":"Origin","lbl.temporada":"Season","lbl.mercados":"Markets","lbl.presentaciones":"Packaging","lbl.cta":"Send inquiry",
+      "p.ciruela.eyebrow":"Dehydrated fruit","p.ciruela.title":"Dried plum","p.ciruela.desc":"In natural condition with pit, with controlled moisture and consistent sizing. We offer a full range of sizes tailored to customer demand, suitable for food processing, baking and direct consumption.",
+      "p.ciruela.origen":"Central Valley, Chile","p.ciruela.temporada":"Available year-round","p.ciruela.mercados":"Asia, Europe, Middle East and Latin America","p.ciruela.presentaciones":"In bulk or 25 kg sacks.",
+      "p.pasas.eyebrow":"Dehydrated fruit","p.pasas.title":"Raisins","p.pasas.desc":"Golden, dark and pink raisins, sorted by size for direct consumption and industry.",
+      "p.pasas.origen":"Copiapó and Elqui Valley","p.pasas.temporada":"Available year-round","p.pasas.mercados":"Asia, Middle East","p.pasas.presentaciones":"In bulk and packed in 10 kg boxes.",
+      "p.nueces.eyebrow":"Dehydrated fruit","p.nueces.title":"Walnuts","p.nueces.desc":"Available shelled (kernel) or in-shell, sorted by color, for the gourmet market and industry.",
+      "p.nueces.origen":"Central Valley, Chile","p.nueces.temporada":"April – June","p.nueces.mercados":"Europe, Asia","p.nueces.presentaciones":"Shelled walnuts in 10 kg boxes; in-shell walnuts in 25 kg sacks or bulk.",
       "p.kiwi.eyebrow":"Fresh fruit","p.kiwi.title":"Kiwi","p.kiwi.desc":"Harvested and sized by season, with careful post-harvest handling.",
-      "p.kiwi.origen":"Maule and Biobío","p.kiwi.temporada":"May – October","p.kiwi.mercados":"Asia, Europe","p.kiwi.presentaciones":"3.5 kg / 10 kg boxes",
-      "p.palta.eyebrow":"Fresh fruit","p.palta.title":"Avocado","p.palta.desc":"Hass variety, selected by size and optimal ripeness.",
-      "p.palta.origen":"Valparaíso and Petorca","p.palta.temporada":"September – March","p.palta.mercados":"Europe, Asia, Latin America","p.palta.presentaciones":"4 kg / 10 kg boxes",
+      "p.kiwi.origen":"Maule and Biobío","p.kiwi.temporada":"March – October","p.kiwi.mercados":"Asia, Europe","p.kiwi.presentaciones":"10 kg plastic box.",
+      "p.palta.eyebrow":"Fresh fruit","p.palta.title":"Avocado","p.palta.desc":"Hass variety, selected by size and optimal preservation.",
+      "p.palta.origen":"Valparaíso and Petorca","p.palta.temporada":"August – January","p.palta.mercados":"Europe, Asia, Latin America","p.palta.presentaciones":"Depending on destination: 10 kg plastic box or 4 kg cardboard box.",
       "p.cereza.eyebrow":"Fresh fruit","p.cereza.title":"Cherry","p.cereza.desc":"Short-season fruit, with logistics ready for air and sea freight.",
       "p.cereza.origen":"O'Higgins and Ñuble","p.cereza.temporada":"November – January","p.cereza.mercados":"China, Hong Kong, Asia","p.cereza.presentaciones":"5 kg boxes · retail clamshell",
       "p.limon.eyebrow":"Fresh fruit","p.limon.title":"Fresh lemon","p.limon.desc":"Selected by size, color and juice content for export.",
-      "p.limon.origen":"Coquimbo and Valparaíso","p.limon.temporada":"Year-round · higher volume May – September","p.limon.mercados":"Europe, Middle East","p.limon.presentaciones":"15 kg / 18 kg boxes",
+      "p.limon.origen":"Coquimbo and Valparaíso","p.limon.temporada":"March – September","p.limon.mercados":"Europe, Middle East","p.limon.presentaciones":"15 kg / 18 kg boxes",
       "origen.eyebrow":"Origin","origen.title":"From the Andes to the sea, a selection with a name behind it",
-      "origen.l1.k":"Origin","origen.l1.v":"Productive valleys between the Coquimbo and Biobío regions, each with its own climate suited to every species.",
-      "origen.l2.k":"Selection","origen.l2.v":"Each lot is chosen in the field by size, ripeness and sanitary condition.",
+      "origen.l1.k":"Origin","origen.l1.v":"Productive valleys between the Coquimbo and Biobío regions, each with its own climate suited to every crop.",
+      "origen.l2.k":"Selection","origen.l2.v":"Each lot is chosen in the field by size, preservation and sanitary condition.",
       "origen.l3.k":"Growers","origen.l3.v":"Direct, long-term relationships with Chilean growers.",
       "origen.l4.k":"Seasons","origen.l4.v":"A dedicated harvest calendar for each line, fresh and dehydrated.",
       "mercados.eyebrow":"Markets","mercados.title":"International presence","mercados.lead":"We ship to the most demanding markets, with logistics tailored to each destination.",
-      "mkt.chile":"Chile","mkt.latam":"Latin America","mkt.europa":"Europe","mkt.medio":"Middle East","mkt.asia":"Asia",
+      "mkt.chile":"Chile","mkt.argentina":"Argentina","mkt.latam":"Latin America","mkt.europa":"Europe","mkt.medio":"Middle East","mkt.asia":"Asia",
       "proceso.eyebrow":"Process","proceso.title":"From selection to the port of destination","proceso.lead":"Four stages, the same quality standard throughout.",
       "proceso.s1.t":"Selection","proceso.s1.d":"We choose each lot in the field with the grower, based on size and quality.",
       "proceso.s2.t":"Classification","proceso.s2.d":"Processing and classification adapted to the product and the destination market.",
